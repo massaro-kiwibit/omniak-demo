@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -58,6 +59,7 @@ export class AppComponent {
     },
   ]
   selected: any = null;
+  @ViewChild('drawer') drawer!: MatDrawer;
 }
 
 interface MenuItem {

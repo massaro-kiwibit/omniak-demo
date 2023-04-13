@@ -1,4 +1,4 @@
-<div class="layout">
+<!-- <div class="layout">
   <mat-toolbar class="header mat-elevation-z2">
     <span class="logo">Omnia K</span>
     <button mat-icon-button>
@@ -23,5 +23,36 @@
   </div>
   <div class="content">
     <router-outlet></router-outlet>
+  </div>
+</div> -->
+<div class="layout">
+  <div class="header">
+
+  </div>
+  <div class="left-nav-rail">
+
+  </div>
+  <mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" #drawer class="drawer">
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <div class="bottom-nav-rail">
+    <button mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>calendar_today</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>assessment</mat-icon>
+    </button>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
 </div>
