@@ -55,8 +55,8 @@ $active-color-contrast: #000;
 .drawer {
   padding: 20px;
   width: $drawer-width;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
   background-color: $base-color;
   color: #e3e3e3;
 }

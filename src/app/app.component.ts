@@ -32,6 +32,17 @@ export class AppComponent {
   openMenuFromToggle() {
     // TODO
     this.drawer.toggle();
+    this.drawerMenu = menu;
+  }
+
+  onDrawerLeave() {
+    this.isSmallScreen.subscribe({
+      next: (res) => {
+        if (!res.matches) {
+          this.drawer.close();
+        }
+      }
+    })
   }
 
 }
