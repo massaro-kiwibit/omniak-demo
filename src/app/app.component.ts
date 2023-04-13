@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Subject, takeUntil } from 'rxjs';
+import { bottomNavMenu, menu } from './config/menu';
 
 @Component({
   selector: 'app-root',
@@ -7,62 +10,33 @@ import { MatDrawer } from '@angular/material/sidenav';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'navigation-prototype';
-  hidden: boolean = true;
-  menu: MenuItem[] = [
-    {
-      name: 'Home',
-      icon: 'roofing',
-      path: 'home'
-    },
-    {
-      name: 'Develop',
-      icon: 'code',
-      path: 'develop',
-      subMenu: [
-        {
-          name: 'Android',
-          icon: 'android',
-          path: 'develop/android'
-        },
-        {
-          name: 'Flutter',
-          icon: 'flutter_dash',
-          path: 'develop/flutter'
-        },
-        {
-          name: 'Web',
-          icon: 'language',
-          path: 'develop/web'
-        }
-      ]
-    },
-    {
-      name: 'Foundations',
-      icon: 'book',
-      path: 'foundations',
-      subMenu: [
-        {
-          name: 'Accessibility',
-          icon: 'accessibility'
-        },
-        {
-          name: 'Customizing Material',
-          icon: 'support_agent'
-        }
-      ]
-    },
-    {
-      name: 'Styles',
-      icon: 'palette',
-      path: 'styles'
-    },
-  ]
-  selected: any = null;
+
   @ViewChild('drawer') drawer!: MatDrawer;
+
+  menu: MenuItem[] = menu;
+  bottomNavMenu: MenuItem[] = bottomNavMenu;
+  drawerMenu: MenuItem[] = [];
+
+  destroyed = new Subject<void>();
+
+  isSmallScreen = this.breakpointObserver
+    .observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+    ])
+    .pipe(takeUntil(this.destroyed));
+
+  constructor(private breakpointObserver: BreakpointObserver) { }
+
+  openMenuFromToggle() {
+    // TODO
+    this.drawer.toggle();
+  }
+
 }
 
-interface MenuItem {
+export interface MenuItem {
   name: string;
   icon?: string;
   path?: string;
