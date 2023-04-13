@@ -8,46 +8,61 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'navigation-prototype';
   hidden: boolean = true;
-  menu = [
+  menu: MenuItem[] = [
     {
       name: 'Home',
-      icon: 'roofing'
-    },
-    {
-      name: 'Get started',
-      icon: 'apps'
+      icon: 'roofing',
+      path: 'home'
     },
     {
       name: 'Develop',
       icon: 'code',
-      children: [
+      path: 'develop',
+      subMenu: [
         {
-          name: 'Android'
+          name: 'Android',
+          icon: 'android',
+          path: 'develop/android'
         },
         {
-          name: 'Flutter'
+          name: 'Flutter',
+          icon: 'flutter_dash',
+          path: 'develop/flutter'
         },
         {
-          name: 'Web'
+          name: 'Web',
+          icon: 'language',
+          path: 'develop/web'
         }
       ]
     },
     {
       name: 'Foundations',
       icon: 'book',
-      children: [
+      path: 'foundations',
+      subMenu: [
         {
-          name: 'Accessibility'
+          name: 'Accessibility',
+          icon: 'accessibility'
         },
         {
-          name: 'Customizing Material'
+          name: 'Customizing Material',
+          icon: 'support_agent'
         }
       ]
     },
     {
       name: 'Styles',
-      icon: 'palette'
+      icon: 'palette',
+      path: 'styles'
     },
   ]
   selected: any = null;
+}
+
+interface MenuItem {
+  name: string;
+  icon?: string;
+  path?: string;
+  subMenu?: MenuItem[];
 }
