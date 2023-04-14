@@ -19,11 +19,19 @@ export class AppComponent {
 
   destroyed = new Subject<void>();
 
-  isSmallScreen = this.breakpointObserver
+  mobileView$ = this.breakpointObserver
     .observe([
       Breakpoints.XSmall,
       Breakpoints.Small,
       Breakpoints.Medium,
+    ])
+    .pipe(takeUntil(this.destroyed));
+
+  desktopView$ = this.breakpointObserver
+    .observe([
+      Breakpoints.Medium,
+      Breakpoints.Large,
+      Breakpoints.XLarge,
     ])
     .pipe(takeUntil(this.destroyed));
 
@@ -36,9 +44,9 @@ export class AppComponent {
   }
 
   onDrawerLeave() {
-    this.isSmallScreen.subscribe({
+    this.desktopView$.subscribe({
       next: (res) => {
-        if (!res.matches) {
+        if (res.matches) {
           this.drawer.close();
         }
       }

@@ -32,7 +32,7 @@
   </div>
   <mat-drawer-container class="drawer-container">
     <mat-drawer
-      [mode]="(isSmallScreen | async)?.matches ? 'over' : 'side'"
+      [mode]="(mobileView$ | async)?.matches ? 'over' : 'side'"
       #drawer
       class="drawer"
       (mouseenter)="drawer.open()"

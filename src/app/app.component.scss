@@ -2,15 +2,16 @@ $header-height: 56px;
 $bottom-nav-height: 56px;
 $rail-width: 88px;
 $drawer-width: 300px;
-$base-color: #f3f6fc;
-$base-color-contrast: #000;
-$border-base-color: #dbe1ec;
-$active-color: #c2e7ff;
-$active-color-contrast: #000;
+$base-color: #16394e;
+$base-color-contrast: #fff;
+$border-base-color: #395769;
+$active-color: #91b822;
+$active-color-contrast: #fff;
 
 .logo {
   font-size: large;
   font-weight: bold;
+  color: $base-color-contrast;
 }
 
 .layout {
@@ -55,8 +56,8 @@ $active-color-contrast: #000;
 .drawer {
   padding: 20px;
   width: $drawer-width;
-  /* border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px; */
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
   background-color: $base-color;
   color: #e3e3e3;
 }
