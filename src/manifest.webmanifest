@@ -1,6 +1,6 @@
 {
-  "name": "navigation-prototype",
-  "short_name": "navigation-prototype",
+  "name": "omniak-demo",
+  "short_name": "omniak-demo",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
