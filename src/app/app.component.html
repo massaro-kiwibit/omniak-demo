@@ -7,7 +7,7 @@
     >
       <mat-icon>menu</mat-icon>
     </button>
-    <span class="logo">Omnia K</span>
+    <img class="img-logo" src="assets/images/logo-white.png" alt="logo">
   </div>
   <div class="left-nav-rail">
     <div
@@ -32,7 +32,7 @@
   </div>
   <mat-drawer-container class="drawer-container">
     <mat-drawer
-      [mode]="(mobileView$ | async)?.matches ? 'over' : 'side'"
+      mode="over"
       #drawer
       class="drawer"
       (mouseenter)="drawer.open()"

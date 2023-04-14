@@ -1,51 +1,115 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { StylesComponent } from './components/styles/styles.component';
-import { AndroidComponent } from './components/android/android.component';
-import { WebComponent } from './components/web/web.component';
-import { DevelopComponent } from './components/develop/develop.component';
-import { FoundationsComponent } from './components/foundations/foundations.component';
-import { FlutterComponent } from './components/flutter/flutter.component';
+import { PageComponent } from './components/page/page.component';
 
 const routes: Routes = [
+  // Activity
   {
-    path: 'home',
-    component: HomeComponent
+    path: 'activity',
+    component: PageComponent,
+    children: [
+      {
+        path: 'agenda',
+        component: PageComponent,
+      },
+      {
+        path: 'interventions',
+        component: PageComponent
+      },
+      {
+        path: 'weekly-plan',
+        component: PageComponent
+      },
+    ]
   },
+  // Registry
   {
-    path: 'develop',
-    component: DevelopComponent
+    path: 'registry',
+    component: PageComponent,
+    children: [
+      {
+        path: 'companies',
+        component: PageComponent
+      },
+      {
+        path: 'assets',
+        component: PageComponent
+      },
+      {
+        path: 'assets',
+        component: PageComponent
+      },
+      {
+        path: 'categories',
+        component: PageComponent
+      },
+      {
+        path: 'productions',
+        component: PageComponent
+      },
+      {
+        path: 'instruments',
+        component: PageComponent
+      },
+      {
+        path: 'consumables',
+        component: PageComponent
+      },
+      {
+        path: 'expenses',
+        component: PageComponent
+      },
+    ]
   },
+  // Statistics
   {
-    path: 'develop/android',
-    component: AndroidComponent
+    path: 'statistics',
+    component: PageComponent,
+    children: [
+      {
+        path: 'operators',
+        component: PageComponent
+      },
+      {
+        path: 'consumables',
+        component: PageComponent
+      },
+      {
+        path: 'reservations',
+        component: PageComponent
+      },
+    ]
   },
+  // Settings
   {
-    path: 'develop/flutter',
-    component: FlutterComponent
-  },
-  {
-    path: 'develop/web',
-    component: WebComponent
-  },
-  {
-    path: 'foundations',
-    component: FoundationsComponent
-  },
-  {
-    path: 'styles',
-    component: StylesComponent
+    path: 'settings',
+    component: PageComponent,
+    children: [
+      {
+        path: 'users',
+        component: PageComponent
+      },
+      {
+        path: 'company-info',
+        component: PageComponent
+      },
+      {
+        path: 'general',
+        component: PageComponent
+      },
+    ]
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'activity/agenda',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    paramsInheritanceStrategy: 'always',
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

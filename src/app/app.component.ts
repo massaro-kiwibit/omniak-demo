@@ -19,14 +19,6 @@ export class AppComponent {
 
   destroyed = new Subject<void>();
 
-  mobileView$ = this.breakpointObserver
-    .observe([
-      Breakpoints.XSmall,
-      Breakpoints.Small,
-      Breakpoints.Medium,
-    ])
-    .pipe(takeUntil(this.destroyed));
-
   desktopView$ = this.breakpointObserver
     .observe([
       Breakpoints.Medium,

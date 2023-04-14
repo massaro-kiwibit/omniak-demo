@@ -2,73 +2,134 @@ import { MenuItem } from "../app.component";
 
 export const menu: MenuItem[] = [
     {
-        name: 'Home',
-        icon: 'roofing',
-        path: 'home'
-    },
-    {
-        name: 'Develop',
-        icon: 'code',
-        path: 'develop',
+        name: 'Attività',
+        icon: 'electric_bolt',
+        path: 'activity',
         subMenu: [
             {
-                name: 'Android',
-                icon: 'android',
-                path: 'develop/android'
+                name: 'Agenda',
+                icon: 'calendar_today',
+                path: 'activity/agenda'
             },
             {
-                name: 'Flutter',
-                icon: 'flutter_dash',
-                path: 'develop/flutter'
+                name: 'Interventi',
+                icon: 'assignment',
+                path: 'activity/interventions'
             },
             {
-                name: 'Web',
-                icon: 'language',
-                path: 'develop/web'
+                name: 'Piano Settimanale',
+                icon: 'print',
+                path: 'activity/weekly-plan'
             }
         ]
     },
     {
-        name: 'Foundations',
-        icon: 'book',
-        path: 'foundations',
+        name: 'Anagrafiche',
+        icon: 'inbox',
+        path: 'registry',
         subMenu: [
             {
-                name: 'Accessibility',
-                icon: 'accessibility'
+                name: 'Aziende',
+                icon: 'business',
+                path: 'registry/companies'
             },
             {
-                name: 'Customizing Material',
-                icon: 'support_agent'
+                name: 'Assets',
+                icon: 'web_asset',
+                path: 'registry/assets'
+            },
+            {
+                name: 'Categorie',
+                icon: 'sell',
+                path: 'registry/categories'
+            },
+            {
+                name: 'Lavorazioni',
+                icon: 'work',
+                path: 'registry/productions'
+            },
+            {
+                name: 'Strumenti',
+                icon: 'construction',
+                path: 'registry/instruments'
+            },
+            {
+                name: 'Consumabili',
+                icon: 'restaurant',
+                path: 'registry/consumables'
+            },
+            {
+                name: 'Voci Spesa',
+                icon: 'euro_symbol',
+                path: 'registry/expenses'
             }
         ]
     },
     {
-        name: 'Styles',
-        icon: 'palette',
-        path: 'styles'
+        name: 'Statistiche',
+        icon: 'bar_chart',
+        path: 'statistics',
+        subMenu: [
+            {
+                name: 'Operatori',
+                icon: 'engineering',
+                path: 'statistics/operators'
+            },
+            {
+                name: 'Consumabili',
+                icon: 'restaurant',
+                path: 'statistics/consumables'
+            },
+            {
+                name: 'Prenotazioni',
+                icon: 'edit_calendar',
+                path: 'statistics/reservations'
+            },
+        ]
+    },
+    {
+        name: 'Impostazioni',
+        icon: 'tune',
+        path: 'settings',
+        subMenu: [
+            {
+                name: 'Utenti',
+                icon: 'manage_accounts',
+                path: 'settings/users'
+            },
+            {
+                name: 'Dati Aziendali',
+                icon: 'corporate_fare',
+                path: 'settings/company-info'
+            },
+            {
+                name: 'Generali',
+                icon: 'settings',
+                path: 'settings/general'
+            }
+        ]
     },
 ]
 
 export const bottomNavMenu: MenuItem[] = [
     {
-        name: 'Home',
-        path: 'home',
-        icon: 'roofing'
+        name: 'Agenda',
+        icon: 'calendar_today',
+        path: 'activity/agenda'
     },
     {
-        name: 'Develop',
-        icon: 'code',
-        path: 'develop',
+        name: 'Interventi',
+        icon: 'assignment',
+        path: 'activity/interventions'
     },
     {
-        name: 'Foundations',
-        icon: 'book',
-        path: 'foundations',
+        name: 'Prenotazioni',
+        icon: 'edit_calendar',
+        path: 'statistics/reservations'
     },
     {
-        name: 'Styles',
-        icon: 'palette',
-        path: 'styles'
-    },
+        name: 'Generali',
+        icon: 'settings',
+        path: 'settings/general'
+    }
 ];
