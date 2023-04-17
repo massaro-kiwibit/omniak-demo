@@ -9,4 +9,21 @@ import { menu } from 'src/app/config/menu';
 })
 export class MobileSideMenuComponent {
   menu: MenuItem[] = menu;
+  shortcuts: MenuItem[] = [
+    {
+      name: 'Agenda',
+      icon: 'calendar_today',
+      path: 'activity/agenda'
+    },
+    {
+      name: 'Interventi',
+      icon: 'assignment',
+      path: 'activity/interventions'
+    },
+    {
+      name: 'Piano Settimanale',
+      icon: 'print',
+      path: 'activity/weekly-plan'
+    }
+  ];
 }
