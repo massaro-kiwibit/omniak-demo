@@ -1,0 +1,30 @@
+<div class="desktop-menu">
+    <div class="left-nav-rail">
+        <div class="menu-item" (mouseenter)="
+            item.children ? drawer.open() : drawer.close();
+            drawerMenu = item.children ?? []
+          " *ngFor="let item of menu" [routerLink]="item.path">
+            <mat-icon class="menu-item-icon" *ngIf="item.icon" [fontIcon]="item.icon"
+                routerLinkActive="active-item-icon"></mat-icon>
+            <span class="item-name" routerLinkActive="active-item-text">{{
+                item.name
+                }}</span>
+        </div>
+    </div>
+    <mat-drawer-container class="drawer-container">
+        <mat-drawer mode="over" #drawer class="drawer" (mouseenter)="drawer.open()" (mouseleave)="onDrawerLeave()">
+            <div class="drawer-menu">
+                <div *ngFor="let item of drawerMenu" class="submenu-item" [routerLink]="item.path"
+                    routerLinkActive="active-item-icon">
+                    <mat-icon *ngIf="item.icon" [fontIcon]="item.icon"></mat-icon>
+                    <span>{{ item.name }}</span>
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

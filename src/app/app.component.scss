@@ -131,8 +131,8 @@ span {
 
 @media screen and (max-width: 960px) {
   .layout {
-    grid-template-areas: "header" "drawer-container" "bottom-nav-rail";
-    grid-template-rows: $header-height auto $bottom-nav-height;
+    grid-template-areas: "header" "drawer-container";
+    grid-template-rows: $header-height auto;
     grid-template-columns: auto;
   }
   .bottom-nav-rail {

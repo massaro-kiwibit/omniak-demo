@@ -1,20 +1,21 @@
+import { animate, style, transition, trigger } from '@angular/animations';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject, takeUntil } from 'rxjs';
-import { bottomNavMenu, menu } from './config/menu';
+import { MenuItem } from 'src/app/app.component';
+import { menu } from 'src/app/config/menu';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-desktop-side-menu',
+  templateUrl: './desktop-side-menu.component.html',
+  styleUrls: ['./desktop-side-menu.component.scss'],
 })
-export class AppComponent {
+export class DesktopSideMenuComponent {
 
   @ViewChild('drawer') drawer!: MatDrawer;
 
   menu: MenuItem[] = menu;
-  bottomNavMenu: MenuItem[] = bottomNavMenu;
   drawerMenu: MenuItem[] = [];
 
   destroyed = new Subject<void>();
@@ -45,11 +46,4 @@ export class AppComponent {
     })
   }
 
-}
-
-export interface MenuItem {
-  name: string;
-  icon?: string;
-  path?: string;
-  children?: MenuItem[];
 }

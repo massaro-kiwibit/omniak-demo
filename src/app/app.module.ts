@@ -10,11 +10,18 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { PageComponent } from './components/page/page.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { DesktopSideMenuComponent } from './components/desktop-side-menu/desktop-side-menu.component';
+import { MobileSideMenuComponent } from './components/mobile-side-menu/mobile-side-menu.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageComponent
+    PageComponent,
+    DesktopSideMenuComponent,
+    MobileSideMenuComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +31,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
+    MatExpansionModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

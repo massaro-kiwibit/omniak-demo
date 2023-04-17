@@ -1,0 +1,110 @@
+@import "variables";
+@import "functions";
+
+$header-height: 56px;
+$bottom-nav-height: 56px;
+$rail-width: 88px;
+$drawer-width: 300px;
+$base-color: map-get($accent-palette, 700);
+$base-color-contrast: map-deep-get($accent-palette, contrast, 700);
+$border-base-color: map-get($accent-palette, 500);
+$active-color: map-get($primary-palette, 500);
+$active-color-contrast: map-deep-get($accent-palette, contrast, 500);
+$drawer-color: map-get($accent-palette, 500);
+
+.img-logo {
+    height: $header-height;
+}
+.logo {
+    font-size: large;
+    font-weight: bold;
+    color: $base-color-contrast;
+}
+
+.desktop-menu {
+    height: 100%;
+    display: grid;
+    grid-template-areas: "left-nav-rail drawer-container";
+    grid-template-columns: $rail-width auto;
+}
+
+.left-nav-rail {
+    padding: 15px 0;
+    background-color: $base-color;
+    grid-area: left-nav-rail;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid $border-base-color;
+}
+.drawer-container {
+    grid-area: drawer-container;
+}
+.drawer {
+    padding: 20px;
+    width: $drawer-width;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: $drawer-color;
+    color: #e3e3e3;
+}
+.drawer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.content {
+    padding: 20px;
+}
+
+.menu-item {
+    width: 100%;
+    color: $active-color-contrast;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+span {
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.menu-item-icon {
+    transition: 0.2s;
+    border-radius: 25px;
+    padding: 5px 15px;
+    &:hover {
+        background-color: $active-color;
+        transform: scale(1.1);
+    }
+}
+
+.active-item-icon {
+    transition: 0.5s;
+    color: $active-color-contrast;
+    background-color: $active-color;
+}
+.active-item-text {
+    color: $active-color-contrast;
+}
+
+.submenu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    color: $base-color-contrast;
+    gap: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 15px;
+    height: 40px;
+    border-radius: 20px;
+    &:hover {
+        background-color: $active-color;
+    }
+}

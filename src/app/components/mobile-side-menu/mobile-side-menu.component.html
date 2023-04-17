@@ -1,0 +1,37 @@
+<mat-drawer-container class="drawer-container">
+    <mat-drawer mode="over" #drawer class="drawer">
+        <!-- <div class="drawer-menu">
+            <div *ngFor="let item of menu" class="submenu-item" [routerLink]="item.path"
+                routerLinkActive="active-item-icon">
+                <mat-icon *ngIf="item.icon" [fontIcon]="item.icon"></mat-icon>
+                <span>{{ item.name }}</span>
+                <mat-icon *ngIf="item.children">chevron_right</mat-icon>
+            </div>
+        </div> -->
+        <mat-accordion displayMode="flat">
+            <mat-expansion-panel *ngFor="let item of menu" class="mat-elevation-z0">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{item.name}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="drawer-menu">
+                    <div *ngFor="let item of item.children" class="submenu-item" [routerLink]="item.path"
+                        routerLinkActive="active-item-icon">
+                        <mat-icon *ngIf="item.icon" [fontIcon]="item.icon"></mat-icon>
+                        <span>{{ item.name }}</span>
+                        <mat-icon *ngIf="item.children">chevron_right</mat-icon>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="content">
+            <button class="menu-toggler" mat-fab (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

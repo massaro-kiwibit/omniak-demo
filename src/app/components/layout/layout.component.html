@@ -1,0 +1,11 @@
+<div class="layout">
+  <div class="header mat-elevation-z2">
+    <img class="img-logo" src="assets/images/logo-white.png" alt="logo">
+  </div>
+  <div class="main">
+    <app-desktop-side-menu *ngIf="(isDesktop$ | async); else mobile;"></app-desktop-side-menu>
+    <ng-template #mobile>
+      <app-mobile-side-menu></app-mobile-side-menu>
+    </ng-template>
+  </div>
+</div>

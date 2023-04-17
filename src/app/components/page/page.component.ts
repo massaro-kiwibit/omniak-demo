@@ -8,16 +8,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class PageComponent {
 
-  title: string = "";
 
-  constructor(private ar: ActivatedRoute, private router: Router) {
-    this.router.events.subscribe(
-      event => {
-        if (event instanceof NavigationEnd) {
-          this.title = event.url.replace("/", "").replaceAll("/", " | ");
-        }
-      }
-    );
-  }
+  constructor(private ar: ActivatedRoute, private router: Router) { }
 
 }

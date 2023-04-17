@@ -5,7 +5,7 @@ export const menu: MenuItem[] = [
         name: 'Attività',
         icon: 'electric_bolt',
         path: 'activity',
-        subMenu: [
+        children: [
             {
                 name: 'Agenda',
                 icon: 'calendar_today',
@@ -27,7 +27,7 @@ export const menu: MenuItem[] = [
         name: 'Anagrafiche',
         icon: 'inbox',
         path: 'registry',
-        subMenu: [
+        children: [
             {
                 name: 'Aziende',
                 icon: 'business',
@@ -69,7 +69,7 @@ export const menu: MenuItem[] = [
         name: 'Statistiche',
         icon: 'bar_chart',
         path: 'statistics',
-        subMenu: [
+        children: [
             {
                 name: 'Operatori',
                 icon: 'engineering',
@@ -91,7 +91,7 @@ export const menu: MenuItem[] = [
         name: 'Impostazioni',
         icon: 'tune',
         path: 'settings',
-        subMenu: [
+        children: [
             {
                 name: 'Utenti',
                 icon: 'manage_accounts',

@@ -1,0 +1,14 @@
+@import "variables";
+@import "functions";
+.mat-accordion .mat-expansion-panel {
+    background-color: map-get($accent-palette, 500);
+}
+mat-accordion.mat-accordion .mat-expansion-panel .mat-expansion-panel-header .mat-expansion-panel-header-title {
+    color: map-deep-get($accent-palette, contrast, 500);
+}
+mat-accordion.mat-accordion .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+    background-color: map-get($accent-palette, 500);
+}
+mat-accordion.mat-accordion .mat-expansion-panel .mat-expansion-panel-header .mat-expansion-indicator::after {
+    color: map-deep-get($accent-palette, contrast, 500);
+}

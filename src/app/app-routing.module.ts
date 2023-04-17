@@ -7,20 +7,18 @@ const routes: Routes = [
   {
     path: 'activity',
     component: PageComponent,
-    children: [
-      {
-        path: 'agenda',
-        component: PageComponent,
-      },
-      {
-        path: 'interventions',
-        component: PageComponent
-      },
-      {
-        path: 'weekly-plan',
-        component: PageComponent
-      },
-    ]
+  },
+  {
+    path: 'activity/agenda',
+    component: PageComponent
+  },
+  {
+    path: 'activity/interventions',
+    component: PageComponent
+  },
+  {
+    path: 'activity/weekly-plan',
+    component: PageComponent
   },
   // Registry
   {
