@@ -6,7 +6,7 @@ const routes: Routes = [
   // Activity
   {
     path: 'activity',
-    component: PageComponent,
+    redirectTo: 'activity/agenda'
   },
   {
     path: 'activity/agenda',
@@ -23,79 +23,73 @@ const routes: Routes = [
   // Registry
   {
     path: 'registry',
-    component: PageComponent,
-    children: [
-      {
-        path: 'companies',
-        component: PageComponent
-      },
-      {
-        path: 'assets',
-        component: PageComponent
-      },
-      {
-        path: 'assets',
-        component: PageComponent
-      },
-      {
-        path: 'categories',
-        component: PageComponent
-      },
-      {
-        path: 'productions',
-        component: PageComponent
-      },
-      {
-        path: 'instruments',
-        component: PageComponent
-      },
-      {
-        path: 'consumables',
-        component: PageComponent
-      },
-      {
-        path: 'expenses',
-        component: PageComponent
-      },
-    ]
+    redirectTo: 'registry/companies'
+  },
+  {
+    path: 'registry/companies',
+    component: PageComponent
+  },
+  {
+    path: 'registry/assets',
+    component: PageComponent
+  },
+  {
+    path: 'registry/assets',
+    component: PageComponent
+  },
+  {
+    path: 'registry/categories',
+    component: PageComponent
+  },
+  {
+    path: 'registry/productions',
+    component: PageComponent
+  },
+  {
+    path: 'registry/instruments',
+    component: PageComponent
+  },
+  {
+    path: 'registry/consumables',
+    component: PageComponent
+  },
+  {
+    path: 'registry/expenses',
+    component: PageComponent
   },
   // Statistics
   {
     path: 'statistics',
-    component: PageComponent,
-    children: [
-      {
-        path: 'operators',
-        component: PageComponent
-      },
-      {
-        path: 'consumables',
-        component: PageComponent
-      },
-      {
-        path: 'reservations',
-        component: PageComponent
-      },
-    ]
+    redirectTo: 'statistics/operators'
+  },
+  {
+    path: 'statistics/operators',
+    component: PageComponent
+  },
+  {
+    path: 'statistics/consumables',
+    component: PageComponent
+  },
+  {
+    path: 'statistics/reservations',
+    component: PageComponent
   },
   // Settings
   {
     path: 'settings',
-    component: PageComponent,
-    children: [
-      {
-        path: 'users',
-        component: PageComponent
-      },
-      {
-        path: 'company-info',
-        component: PageComponent
-      },
-      {
-        path: 'general',
-        component: PageComponent
-      },
-    ]
+    redirectTo: 'settings/users'
+  },
+  {
+    path: 'settings/users',
+    component: PageComponent
+  },
+  {
+    path: 'settings/company-info',
+    component: PageComponent
+  },
+  {
+    path: 'settings/general',
+    component: PageComponent
   },
   {
     path: '',

@@ -118,11 +118,6 @@ export const bottomNavMenu: MenuItem[] = [
         path: 'activity/agenda'
     },
     {
-        name: 'Interventi',
-        icon: 'assignment',
-        path: 'activity/interventions'
-    },
-    {
         name: 'Prenotazioni',
         icon: 'edit_calendar',
         path: 'statistics/reservations'
