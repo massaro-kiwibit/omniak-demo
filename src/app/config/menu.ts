@@ -35,7 +35,7 @@ export const menu: MenuItem[] = [
             },
             {
                 name: 'Assets',
-                icon: 'web_asset',
+                icon: 'foundation',
                 path: 'registry/assets'
             },
             {
@@ -55,7 +55,7 @@ export const menu: MenuItem[] = [
             },
             {
                 name: 'Consumabili',
-                icon: 'restaurant',
+                icon: 'inventory',
                 path: 'registry/consumables'
             },
             {
@@ -77,7 +77,7 @@ export const menu: MenuItem[] = [
             },
             {
                 name: 'Consumabili',
-                icon: 'restaurant',
+                icon: 'inventory',
                 path: 'statistics/consumables'
             },
             {

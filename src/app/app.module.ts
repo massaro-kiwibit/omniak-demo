@@ -16,6 +16,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatExpansionModule,
     MatDividerModule,
     MatMenuModule,
+    MatTooltipModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

@@ -30,7 +30,7 @@
       </div>
     </mat-drawer-content>
   </mat-drawer-container>
-  <div class="bottom-navigation mat-elevation-z4">
+  <div class="bottom-navigation mat-elevation-z8">
     <div class="nav-btn" *ngFor="let shortcut of shortcuts" [routerLink]="shortcut.path" routerLinkActive="active"
       (click)="drawer.close()">
       <mat-icon>{{ shortcut.icon }}</mat-icon>

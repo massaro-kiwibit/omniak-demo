@@ -11,10 +11,13 @@
 
 * {
   outline: none;
+  //transition: background-color 0.25s ease;
 }
 
 html,
 body {
+  // When in mobile device, removes the blue highlight when clicking on some elements.
+  -webkit-tap-highlight-color: transparent;
   height: 100%;
   font-family: "Nunito", sans-serif;
 }
