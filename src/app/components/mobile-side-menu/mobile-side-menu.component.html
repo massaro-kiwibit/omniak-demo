@@ -1,12 +1,12 @@
 <div class="mobile-menu">
-  <mat-drawer-container class="drawer-container" [hasBackdrop]="false">
-    <mat-drawer mode="push" #drawer class="drawer">
+  <mat-drawer-container class="drawer-container" [hasBackdrop]="true">
+    <mat-drawer mode="push" #drawer class="drawer" [autoFocus]="false">
       <div class="menu-title">
-        <mat-icon>menu_open</mat-icon>
         <h3>Menu</h3>
       </div>
-      <mat-accordion displayMode="flat" class="omniak">
-        <mat-expansion-panel *ngFor="let item of menu" class="mat-elevation-z0">
+      <mat-accordion #menuAccordion displayMode="flat" class="omniak">
+        <mat-expansion-panel *ngFor="let item of menu" class="mat-elevation-z0" routerLinkActive #rla="routerLinkActive"
+          [expanded]="rla.isActive">
           <mat-expansion-panel-header>
             <mat-panel-title>
               <mat-icon>{{ item.icon }}</mat-icon>
@@ -30,7 +30,7 @@
       </div>
     </mat-drawer-content>
   </mat-drawer-container>
-  <div class="bottom-navigation">
+  <div class="bottom-navigation mat-elevation-z4">
     <div class="nav-btn" *ngFor="let shortcut of shortcuts" [routerLink]="shortcut.path" routerLinkActive="active"
       (click)="drawer.close()">
       <mat-icon>{{ shortcut.icon }}</mat-icon>

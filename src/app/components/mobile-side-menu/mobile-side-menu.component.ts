@@ -8,6 +8,8 @@ import { bottomNavMenu, menu } from 'src/app/config/menu';
   styleUrls: ['./mobile-side-menu.component.scss']
 })
 export class MobileSideMenuComponent {
+
   menu: MenuItem[] = menu;
   shortcuts: MenuItem[] = bottomNavMenu;
+
 }

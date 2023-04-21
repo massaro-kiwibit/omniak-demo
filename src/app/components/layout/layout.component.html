@@ -1,6 +1,15 @@
 <div class="layout">
   <div class="header mat-elevation-z2">
     <img class="img-logo" src="assets/images/logo-white.png" alt="logo">
+    <button mat-mini-fab [matMenuTriggerFor]="menu">
+      <mat-icon>palette</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="switchTheme('default')" [class.active]="currentTheme==='default'">Kiwibit</button>
+      <button mat-menu-item (click)="switchTheme('kiwi-dark')" [class.active]="currentTheme==='kiwi-dark'">Kiwibit
+        Dark</button>
+      <button mat-menu-item (click)="switchTheme('bh')" [class.active]="currentTheme==='bh'">Baker Hughes</button>
+    </mat-menu>
   </div>
   <div class="main">
     <app-desktop-side-menu *ngIf="(isDesktop$ | async); else mobile;"></app-desktop-side-menu>

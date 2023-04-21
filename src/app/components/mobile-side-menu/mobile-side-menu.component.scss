@@ -4,13 +4,13 @@
 $header-height: 56px;
 $bottom-nav-height: 56px;
 $rail-width: 88px;
-$drawer-width: 100%;
-$base-color: map-get($accent-palette, 700);
-$base-color-contrast: map-deep-get($accent-palette, contrast, 700);
-$border-base-color: map-get($accent-palette, 500);
-$active-color: map-get($primary-palette, 500);
-$active-color-contrast: map-deep-get($accent-palette, contrast, 500);
-$drawer-color: map-get($accent-palette, 500);
+$drawer-width: 320px;
+$base-color: var(--accent-700);
+$base-color-contrast: var(--accent-contrast-700);
+$border-base-color: var(--accent-500);
+$active-color: var(--primary-500);
+$active-color-contrast: var(--accent-contrast-500);
+$drawer-color: var(--accent-500);
 
 .menu-title {
   padding: 0 10px 0 20px;
@@ -18,6 +18,8 @@ $drawer-color: map-get($accent-palette, 500);
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: space-between;
+  color: var(--accent-contrast-500);
 }
 
 .mobile-menu {
@@ -38,7 +40,7 @@ $drawer-color: map-get($accent-palette, 500);
 }
 
 .active {
-  color: map-get($primary-palette, 500);
+  color: $active-color;
 }
 
 .img-logo {
@@ -54,7 +56,7 @@ $drawer-color: map-get($accent-palette, 500);
   display: grid;
   overflow-y: auto;
 }
-.drawer {
+.drawer.mat-drawer.mat-drawer-push {
   width: $drawer-width;
   background-color: $drawer-color;
   color: #e3e3e3;
@@ -106,7 +108,7 @@ span {
   align-items: center;
   justify-content: space-between;
   color: $base-color-contrast;
-  border: 1px solid map-get($accent-palette, 400);
+  border: 1px solid var(--accent-400);
   gap: 20px;
   font-size: 14px;
   cursor: pointer;

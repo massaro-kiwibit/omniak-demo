@@ -1,6 +1,9 @@
 import { Subject, map, takeUntil } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+
+type Theme = 'default' | 'bh' | 'kiwi-dark';
 
 @Component({
   selector: 'app-layout',
@@ -8,6 +11,8 @@ import { Component, OnDestroy } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnDestroy {
+
+  currentTheme: Theme = 'default';
 
   destroyed = new Subject<void>();
 
@@ -22,7 +27,18 @@ export class LayoutComponent implements OnDestroy {
       map(state => state.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.document.body.classList.add(this.currentTheme);
+  }
+
+  // Swap them out, and keep track of the new theme
+  switchTheme(newTheme: Theme): void {
+    this.document.body.classList.replace(this.currentTheme, newTheme)
+    this.currentTheme = newTheme;
+  }
 
   ngOnDestroy(): void {
     this.destroyed.next();

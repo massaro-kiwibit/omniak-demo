@@ -15,6 +15,7 @@ import { MobileSideMenuComponent } from './components/mobile-side-menu/mobile-si
 import { LayoutComponent } from './components/layout/layout.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatSidenavModule,
     MatExpansionModule,
     MatDividerModule,
+    MatMenuModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

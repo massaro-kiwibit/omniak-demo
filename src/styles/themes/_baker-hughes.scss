@@ -1,36 +1,32 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
+
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
-
-$app-typography: mat.define-typography-config(
+$bh-typography: mat.define-typography-config(
     $font-family: "Nunito",
 );
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-// In this case we have manually defined the color palettes in the _variables.scss file.
 
 $primary-palette: (
-    50: #f2f6e4,
-    100: #deeabd,
-    200: #c8dc91,
-    300: #b2cd64,
-    400: #a2c343,
-    500: #91b822,
-    600: #89b11e,
-    700: #7ea819,
-    800: #74a014,
-    900: #62910c,
-    A100: #e6ffc0,
-    A200: #d2ff8d,
-    A400: #bfff5a,
-    A700: #b5ff41,
+    50: #e3f6f2,
+    100: #baeade,
+    200: #8cdcc9,
+    300: #5dcdb3,
+    400: #3bc3a2,
+    500: #18b892,
+    600: #15b18a,
+    700: #11a87f,
+    800: #0ea075,
+    900: #089163,
+    A100: #beffe7,
+    A200: #8bffd3,
+    A400: #58ffc0,
+    A700: #3fffb7,
     contrast: (
         50: #000000,
         100: #000000,
@@ -38,9 +34,9 @@ $primary-palette: (
         300: #000000,
         400: #000000,
         500: #000000,
-        600: #000000,
-        700: #000000,
-        800: #000000,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
         900: #ffffff,
         A100: #000000,
         A200: #000000,
@@ -48,22 +44,21 @@ $primary-palette: (
         A700: #000000,
     ),
 );
-
 $accent-palette: (
-    50: #e3e7ea,
-    100: #b9c4ca,
-    200: #8b9ca7,
-    300: #5c7483,
-    400: #395769,
-    500: #16394e,
-    600: #133347,
-    700: #102c3d,
-    800: #0c2435,
-    900: #061725,
-    A100: #61afff,
-    A200: #2e96ff,
-    A400: #007cfa,
-    A700: #006fe1,
+    50: #e1e6e6,
+    100: #b4c2bf,
+    200: #829995,
+    300: #50706b,
+    400: #2b514b,
+    500: #05322b,
+    600: #042d26,
+    700: #042620,
+    800: #031f1a,
+    900: #011310,
+    A100: #54ffd9,
+    A200: #21ffce,
+    A400: #00edb8,
+    A700: #00d4a5,
     contrast: (
         50: #000000,
         100: #000000,
@@ -77,8 +72,8 @@ $accent-palette: (
         900: #ffffff,
         A100: #000000,
         A200: #000000,
-        A400: #ffffff,
-        A700: #ffffff,
+        A400: #000000,
+        A700: #000000,
     ),
 );
 
@@ -115,20 +110,24 @@ $warn-palette: (
     ),
 );
 
-$app-primary: mat.define-palette($primary-palette);
-$app-accent: mat.define-palette($accent-palette);
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// In this case we have manually defined the color palettes in the _variables.scss file.
+$bh-primary: mat.define-palette($primary-palette);
+$bh-accent: mat.define-palette($accent-palette);
 // The warn palette is optional (defaults to red).
-$app-warn: mat.define-palette($warn-palette);
+$bh-warn: mat.define-palette($warn-palette);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$app-theme: mat.define-light-theme(
+$bh-theme: mat.define-light-theme(
     (
         color: (
-            primary: $app-primary,
-            accent: $app-accent,
-            warn: $app-warn,
+            primary: $bh-primary,
+            accent: $bh-accent,
+            warn: $bh-warn,
         ),
-        typography: $app-typography,
+        typography: $bh-typography,
     )
 );
 // Include theme styles for core and each component used in your app.
@@ -136,13 +135,13 @@ $app-theme: mat.define-light-theme(
 // that you are using.
 
 :root {
-    .default {
-        @include mat.all-component-themes($app-theme);
-        --primary-500: #{map-get($app-primary, 500)};
-        --accent-400: #{map-get($app-accent, 400)};
-        --accent-500: #{map-get($app-accent, 500)};
-        --accent-700: #{map-get($app-accent, 700)};
-        --accent-contrast-500: #{map-deep-get($app-accent, contrast, 500)};
-        --accent-contrast-700: #{map-deep-get($app-accent, contrast, 700)};
+    .bh {
+        @include mat.all-component-colors($bh-theme);
+        --primary-500: #{map-get($bh-primary, 500)};
+        --accent-400: #{map-get($bh-accent, 400)};
+        --accent-500: #{map-get($bh-accent, 500)};
+        --accent-700: #{map-get($bh-accent, 700)};
+        --accent-contrast-500: #{map-deep-get($bh-accent, contrast, 500)};
+        --accent-contrast-700: #{map-deep-get($bh-accent, contrast, 700)};
     }
 }
