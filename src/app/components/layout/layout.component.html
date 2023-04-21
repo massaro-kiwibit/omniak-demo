@@ -5,10 +5,13 @@
       <mat-icon>palette</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="switchTheme('default')" [class.active]="currentTheme==='default'">Kiwibit</button>
-      <button mat-menu-item (click)="switchTheme('kiwi-dark')" [class.active]="currentTheme==='kiwi-dark'">Kiwibit
+      <button mat-menu-item (click)="switchTheme('default')"
+        [class.current-theme]="currentTheme==='default'">Kiwibit</button>
+      <button mat-menu-item (click)="switchTheme('kiwi-dark')"
+        [class.current-theme]="currentTheme==='kiwi-dark'">Kiwibit
         Dark</button>
-      <button mat-menu-item (click)="switchTheme('bh')" [class.active]="currentTheme==='bh'">Baker Hughes</button>
+      <button mat-menu-item (click)="switchTheme('bh')" [class.current-theme]="currentTheme==='bh'">Baker
+        Hughes</button>
     </mat-menu>
   </div>
   <div class="main">

@@ -1,10 +1,8 @@
 @import "variables";
-@import "functions";
 
-$header-height: 56px;
-$bottom-nav-height: 56px;
-$rail-width: 88px;
-$drawer-width: 300px;
+$header-height: $header-height;
+$rail-width: $rail-width;
+$drawer-width: $desktop-drawer-width;
 $base-color: var(--accent-700);
 $base-color-contrast: var(--accent-contrast-700);
 $border-base-color: var(--accent-500);
@@ -20,14 +18,12 @@ $drawer-color: var(--accent-500);
     font-weight: bold;
     color: $base-color-contrast;
 }
-
 .desktop-menu {
     height: 100%;
     display: grid;
     grid-template-areas: "left-nav-rail drawer-container";
     grid-template-columns: $rail-width auto;
 }
-
 .left-nav-rail {
     padding: 15px 0;
     background-color: $base-color;
@@ -56,7 +52,6 @@ $drawer-color: var(--accent-500);
 .content {
     padding: 20px;
 }
-
 .menu-item {
     width: 100%;
     color: $active-color-contrast;
@@ -67,12 +62,10 @@ $drawer-color: var(--accent-500);
     gap: 8px;
     cursor: pointer;
 }
-
 span {
     font-weight: 500;
     font-size: 11px;
 }
-
 .menu-item-icon {
     transition: 0.2s;
     border-radius: 25px;
@@ -82,7 +75,6 @@ span {
         transform: scale(1.1);
     }
 }
-
 .active-item-icon {
     transition: 0.5s;
     color: $active-color-contrast;
@@ -91,7 +83,6 @@ span {
 .active-item-text {
     color: $active-color-contrast;
 }
-
 .submenu-item {
     display: flex;
     flex-direction: row;

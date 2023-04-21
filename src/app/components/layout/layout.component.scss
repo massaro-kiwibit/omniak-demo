@@ -1,26 +1,12 @@
 @import "variables";
-@import "functions";
-
-$header-height: 56px;
-$bottom-nav-height: 56px;
-$rail-width: 88px;
-$drawer-width: 300px;
-$base-color: var(--accent-700);
-$base-color-contrast: var(--accent-contrast-700);
-$border-base-color: var(--accent-500);
-$active-color: var(--primary-500);
-$active-color-contrast: var(--accent-contrast-500);
-$drawer-color: var(--accent-500);
 
 .img-logo {
   height: $header-height;
 }
-
-.active {
-  background-color: $active-color;
-  color: $active-color-contrast;
+.current-theme {
+  background-color: var(--primary-500);
+  color: var(--accent-contrast-500);
 }
-
 .layout {
   height: 100%;
   display: grid;
@@ -28,7 +14,7 @@ $drawer-color: var(--accent-500);
 }
 .header {
   z-index: 999;
-  background-color: $base-color;
+  background-color: var(--accent-700);
   display: flex;
   gap: 10px;
   align-items: center;

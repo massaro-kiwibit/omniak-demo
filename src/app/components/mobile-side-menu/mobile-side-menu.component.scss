@@ -1,16 +1,15 @@
 @import "variables";
-@import "functions";
 
-$header-height: 56px;
-$bottom-nav-height: 56px;
-$rail-width: 88px;
-$drawer-width: 320px;
+$header-height: $header-height;
+$bottom-nav-height: $bottom-nav-height;
+$drawer-width: $mobile-drawer-width;
 $base-color: var(--accent-700);
 $base-color-contrast: var(--accent-contrast-700);
 $border-base-color: var(--accent-500);
 $active-color: var(--primary-500);
 $active-color-contrast: var(--accent-contrast-500);
 $drawer-color: var(--accent-500);
+$drawer-color-contrast: var(--accent-contrast-500);
 
 .menu-title {
   padding: 0 10px 0 20px;
@@ -24,7 +23,7 @@ $drawer-color: var(--accent-500);
 
 .mobile-menu {
   display: grid;
-  grid-template-rows: auto 56px;
+  grid-template-rows: auto $bottom-nav-height;
   height: 100%;
 }
 .bottom-navigation {
@@ -59,7 +58,7 @@ $drawer-color: var(--accent-500);
 .drawer.mat-drawer.mat-drawer-push {
   width: $drawer-width;
   background-color: $drawer-color;
-  color: #e3e3e3;
+  color: $drawer-color-contrast;
 }
 .drawer-menu {
   display: flex;
@@ -132,7 +131,7 @@ span {
   cursor: pointer;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: $medium-breakpoint) {
   .layout {
     grid-template-areas: "header" "drawer-container";
     grid-template-rows: $header-height auto;

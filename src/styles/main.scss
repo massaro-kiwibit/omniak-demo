@@ -16,14 +16,9 @@
 html,
 body {
   height: 100%;
-  outline: none;
   font-family: "Nunito", sans-serif;
 }
 
 body {
-  // When in mobile device, removes the blue highlight when clicking on some elements.
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
   margin: 0;
-  background-color: #ffffff;
 }
