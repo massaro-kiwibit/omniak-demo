@@ -8,6 +8,9 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
+
+@import "mixins";
+
 $bh-typography: mat.define-typography-config(
     $font-family: "Nunito",
 );
@@ -130,6 +133,7 @@ $bh-theme: mat.define-light-theme(
         typography: $bh-typography,
     )
 );
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -137,11 +141,6 @@ $bh-theme: mat.define-light-theme(
 :root {
     .bh {
         @include mat.all-component-colors($bh-theme);
-        --primary-500: #{map-get($bh-primary, 500)};
-        --accent-400: #{map-get($bh-accent, 400)};
-        --accent-500: #{map-get($bh-accent, 500)};
-        --accent-700: #{map-get($bh-accent, 700)};
-        --accent-contrast-500: #{map-deep-get($bh-accent, contrast, 500)};
-        --accent-contrast-700: #{map-deep-get($bh-accent, contrast, 700)};
+        @include generate-colors-variables($bh-theme);
     }
 }

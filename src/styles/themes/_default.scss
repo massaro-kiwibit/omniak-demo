@@ -8,6 +8,8 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+@import "mixins";
+
 $app-typography: mat.define-typography-config(
     $font-family: "Nunito",
 );
@@ -138,11 +140,6 @@ $app-theme: mat.define-light-theme(
 :root {
     .default {
         @include mat.all-component-themes($app-theme);
-        --primary-500: #{map-get($app-primary, 500)};
-        --accent-400: #{map-get($app-accent, 400)};
-        --accent-500: #{map-get($app-accent, 500)};
-        --accent-700: #{map-get($app-accent, 700)};
-        --accent-contrast-500: #{map-deep-get($app-accent, contrast, 500)};
-        --accent-contrast-700: #{map-deep-get($app-accent, contrast, 700)};
+        @include generate-colors-variables($app-theme);
     }
 }

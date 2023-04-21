@@ -1,0 +1,18 @@
+@use "@angular/material" as mat;
+
+@mixin generate-colors-variables($theme) {
+    // Get the color config from the theme.
+    $color-config: mat.get-color-config($theme);
+
+    // Get the primary color palette from the color-config.
+    $primary-palette: map-get($color-config, "primary");
+    // Get the accent color palette from the color-config.
+    $accent-palette: map-get($color-config, "accent");
+
+    --primary-500: #{map-get($primary-palette, 500)};
+    --accent-400: #{map-get($accent-palette, 400)};
+    --accent-500: #{map-get($accent-palette, 500)};
+    --accent-700: #{map-get($accent-palette, 700)};
+    --accent-contrast-500: #{map-deep-get($accent-palette, contrast, 500)};
+    --accent-contrast-700: #{map-deep-get($accent-palette, contrast, 700)};
+}
