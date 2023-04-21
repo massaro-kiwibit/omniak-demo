@@ -17,6 +17,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,12 +29,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     PageComponent,
     DesktopSideMenuComponent,
     MobileSideMenuComponent,
-    LayoutComponent
+    LayoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
@@ -38,6 +45,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatDividerModule,
     MatMenuModule,
     MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

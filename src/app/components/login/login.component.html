@@ -1,0 +1,32 @@
+<div class="main">
+    <div class="box">
+        <div class="header">
+            <img src="assets/images/product-logo.webp" height="70" alt="">
+            <div class="owner">
+                <!-- <i>Powered by</i> -->
+                <img src="assets/images/owner-logo.webp" height="40" alt="" style="justify-self: end;">
+            </div>
+        </div>
+        <mat-card class="mat-elevation-z8">
+            <form (ngSubmit)="login($event)">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input [type]="showPassword ? 'text' : 'password'" matInput>
+                    <button mat-icon-button matSuffix type="button" color="primary" (click)="showPassword=!showPassword"
+                        [matTooltip]="showPassword ? 'Hide Password' : 'Show Password'">
+                        <mat-icon>{{showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Tenant</mat-label>
+                    <input type="text" matInput>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </form>
+        </mat-card>
+    </div>
+</div>
