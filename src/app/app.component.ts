@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
+import { Theme, ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,9 @@ import { Component, Inject } from '@angular/core';
 })
 export class AppComponent {
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    private themeService: ThemeService
   ) {
-    this.document.body.classList.add('default');
+    const theme = localStorage.getItem('omniak-theme') as Theme | null;
+    this.themeService.setTheme(theme ?? 'default');
   }
 }

@@ -4,16 +4,7 @@
 
 // Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
 @import "mixins";
-
-$kiwi-dark-typography: mat.define-typography-config(
-    $font-family: "Nunito",
-);
 
 $primary-palette: (
     50: #f2f6e4,
@@ -49,20 +40,20 @@ $primary-palette: (
 );
 
 $accent-palette: (
-    50: #e3e7ea,
-    100: #b9c4ca,
-    200: #8b9ca7,
-    300: #5c7483,
-    400: #395769,
-    500: #16394e,
-    600: #133347,
-    700: #102c3d,
-    800: #0c2435,
-    900: #061725,
-    A100: #61afff,
-    A200: #2e96ff,
-    A400: #007cfa,
-    A700: #006fe1,
+    50: #e6e6e6,
+    100: #c1c1c1,
+    200: #989898,
+    300: #6e6e6e,
+    400: #4f4f4f,
+    500: #303030,
+    600: #2b2b2b,
+    700: #242424,
+    800: #1e1e1e,
+    900: #131313,
+    A100: #ef6c6c,
+    A200: #ea3e3e,
+    A400: #f50000,
+    A700: #db0000,
     contrast: (
         50: #000000,
         100: #000000,
@@ -75,7 +66,7 @@ $accent-palette: (
         800: #ffffff,
         900: #ffffff,
         A100: #000000,
-        A200: #000000,
+        A200: #ffffff,
         A400: #ffffff,
         A700: #ffffff,
     ),
@@ -130,8 +121,7 @@ $kiwi-dark-theme: mat.define-dark-theme(
             primary: $kiwi-dark-primary,
             accent: $kiwi-dark-accent,
             warn: $kiwi-dark-warn,
-        ),
-        typography: $kiwi-dark-typography,
+        )
     )
 );
 // Include theme styles for core and each component used in your app.

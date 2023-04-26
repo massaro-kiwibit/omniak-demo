@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { PageComponent } from './components/page/page.component';
-import { LoginComponent } from './components/login/login.component';
-import { LayoutComponent } from './components/layout/layout.component';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PageComponent } from './core/components/page/page.component';
+import { LoginComponent } from './core/components/login/login.component';
+import { LayoutComponent } from './core/components/layout/layout.component';
 
 const routes: Routes = [
   {
@@ -11,108 +11,41 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'activity/agenda',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        redirectTo: 'prediction'
       },
-      // Activity
+      {
+        path: 'prediction',
+        loadChildren: () => import('./features/prediction/prediction.module').then(m => m.PredictionModule)
+      },
       {
         path: 'activity',
-        redirectTo: 'activity/agenda'
+        loadChildren: () => import('./features/activity/activity.module').then(m => m.ActivityModule)
       },
       {
-        path: 'activity/agenda',
-        component: PageComponent
+        path: 'analysis',
+        loadChildren: () => import('./features/analysis/analysis.module').then(m => m.AnalysisModule)
       },
-      {
-        path: 'activity/interventions',
-        component: PageComponent
-      },
-      {
-        path: 'activity/weekly-plan',
-        component: PageComponent
-      },
-      // Registry
       {
         path: 'registry',
-        redirectTo: 'registry/companies'
+        loadChildren: () => import('./features/registry/registry.module').then(m => m.RegistryModule)
       },
-      {
-        path: 'registry/companies',
-        component: PageComponent
-      },
-      {
-        path: 'registry/assets',
-        component: PageComponent
-      },
-      {
-        path: 'registry/assets',
-        component: PageComponent
-      },
-      {
-        path: 'registry/categories',
-        component: PageComponent
-      },
-      {
-        path: 'registry/productions',
-        component: PageComponent
-      },
-      {
-        path: 'registry/instruments',
-        component: PageComponent
-      },
-      {
-        path: 'registry/consumables',
-        component: PageComponent
-      },
-      {
-        path: 'registry/expenses',
-        component: PageComponent
-      },
-      // Statistics
-      {
-        path: 'statistics',
-        redirectTo: 'statistics/operators'
-      },
-      {
-        path: 'statistics/operators',
-        component: PageComponent
-      },
-      {
-        path: 'statistics/consumables',
-        component: PageComponent
-      },
-      {
-        path: 'statistics/reservations',
-        component: PageComponent
-      },
-      // Settings
       {
         path: 'settings',
-        redirectTo: 'settings/users'
-      },
-      {
-        path: 'settings/users',
-        component: PageComponent
-      },
-      {
-        path: 'settings/company-info',
-        component: PageComponent
-      },
-      {
-        path: 'settings/general',
-        component: PageComponent
+        loadChildren: () => import('./features/settings/settings.module').then(m => m.SettingsModule)
       },
     ]
   },
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     paramsInheritanceStrategy: 'always',
+    preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]
 })

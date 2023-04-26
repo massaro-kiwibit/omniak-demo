@@ -13,6 +13,7 @@
 $app-typography: mat.define-typography-config(
     $font-family: "Nunito",
 );
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -139,7 +140,7 @@ $app-theme: mat.define-light-theme(
 
 :root {
     .default {
-        @include mat.all-component-colors($app-theme);
+        @include mat.all-component-themes($app-theme);
         @include generate-colors-variables($app-theme);
     }
 }

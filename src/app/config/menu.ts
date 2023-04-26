@@ -1,26 +1,115 @@
 import { MenuItem } from "../models/menu-item.model";
 
+/* 
+
+Previsione
+    - Agenda
+    - Piano settimanale
+    - Scadenzario
+Azione
+    - Inteventi
+    - Timbratura
+    - Attiva Totem Timbratura
+    - Ultima timbratura per ogni lavoratore
+Analisi
+    - Operatori
+    - Consumabili
+    - Prenotazioni
+    - Calendario Timbrature
+    - Log ultime timbrature
+Anagrafiche
+    - Aziende
+    - Asset
+    - ...
+    - Utenti
+Impostazioni
+    - Dati aziendali
+    - Scadenzario
+    - Interventi
+    - Risorse umane
+
+*/
+
 export const menu: MenuItem[] = [
+    {
+        name: 'Previsione',
+        icon: 'calendar_month',
+        path: 'prediction',
+        children: [
+            {
+                name: 'Agenda',
+                icon: 'calendar_today',
+                path: 'prediction/agenda'
+            },
+            {
+                name: 'Scadenziario',
+                icon: 'timer',
+                path: 'prediction/timetable'
+            },
+            {
+                name: 'Piano Settimanale',
+                icon: 'print',
+                path: 'prediction/weekly-plan'
+            }
+        ]
+    },
     {
         name: 'Attività',
         icon: 'electric_bolt',
         path: 'activity',
         children: [
             {
-                name: 'Agenda',
-                icon: 'calendar_today',
-                path: 'activity/agenda'
-            },
-            {
-                name: 'Interventi',
+                name: 'Inteventi',
                 icon: 'assignment',
                 path: 'activity/interventions'
             },
             {
-                name: 'Piano Settimanale',
-                icon: 'print',
-                path: 'activity/weekly-plan'
-            }
+                name: 'Timbratura',
+                icon: 'approval',
+                path: 'activity/stamping'
+            },
+            {
+                name: 'Attiva Totem Timbratura',
+                icon: 'question_mark',
+                path: 'activity/activate-stamping'
+            },
+            {
+                name: 'Ultima Timbratura per ogni Lavoratore',
+                icon: 'question_mark',
+                path: 'activity/last-stamping'
+            },
+        ]
+    },
+    {
+        name: 'Analisi',
+        icon: 'monitor_heart',
+        path: 'analysis',
+        children: [
+            {
+                name: 'Operatori',
+                icon: 'engineering',
+                path: 'analysis/operators'
+            },
+            {
+                name: 'Consumabili',
+                icon: 'inventory',
+                path: 'analysis/consumables'
+            },
+            {
+                name: 'Prenotazioni',
+                icon: 'edit_calendar',
+                path: 'analysis/reservations'
+            },
+            {
+                name: 'Calendario Timbrature',
+                icon: 'question_mark',
+                path: 'analysis/stamping-calendar'
+            },
+            {
+                name: 'Log Ultime Timbrature',
+                icon: 'question_mark',
+                path: 'analysis/stamping-log'
+            },
         ]
     },
     {
@@ -62,28 +151,11 @@ export const menu: MenuItem[] = [
                 name: 'Voci Spesa',
                 icon: 'euro_symbol',
                 path: 'registry/expenses'
-            }
-        ]
-    },
-    {
-        name: 'Statistiche',
-        icon: 'bar_chart',
-        path: 'statistics',
-        children: [
-            {
-                name: 'Operatori',
-                icon: 'engineering',
-                path: 'statistics/operators'
             },
             {
-                name: 'Consumabili',
-                icon: 'inventory',
-                path: 'statistics/consumables'
-            },
-            {
-                name: 'Prenotazioni',
-                icon: 'edit_calendar',
-                path: 'statistics/reservations'
+                name: 'Utenti',
+                icon: 'group',
+                path: 'settings/users'
             },
         ]
     },
@@ -92,11 +164,6 @@ export const menu: MenuItem[] = [
         icon: 'tune',
         path: 'settings',
         children: [
-            {
-                name: 'Utenti',
-                icon: 'manage_accounts',
-                path: 'settings/users'
-            },
             {
                 name: 'Dati Aziendali',
                 icon: 'corporate_fare',
@@ -113,18 +180,18 @@ export const menu: MenuItem[] = [
 
 export const bottomNavMenu: MenuItem[] = [
     {
-        name: 'Agenda',
-        icon: 'calendar_today',
-        path: 'activity/agenda'
+        name: 'Previsione',
+        icon: 'calendar_month',
+        path: 'prediction',
     },
     {
-        name: 'Prenotazioni',
-        icon: 'edit_calendar',
-        path: 'statistics/reservations'
+        name: 'Attività',
+        icon: 'electric_bolt',
+        path: 'activity',
     },
     {
-        name: 'Generali',
-        icon: 'settings',
-        path: 'settings/general'
+        name: 'Analisi',
+        icon: 'monitor_heart',
+        path: 'analysis',
     }
 ];

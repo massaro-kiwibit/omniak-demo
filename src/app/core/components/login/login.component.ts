@@ -11,6 +11,6 @@ export class LoginComponent {
   constructor(private router: Router) { }
   login(e: Event) {
     e.preventDefault();
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 }

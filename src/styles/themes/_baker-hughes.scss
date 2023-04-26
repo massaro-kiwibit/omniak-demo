@@ -4,16 +4,7 @@
 
 // Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
 @import "mixins";
-
-$bh-typography: mat.define-typography-config(
-    $font-family: "Nunito",
-);
 
 $primary-palette: (
     50: #e3f6f2,
@@ -129,8 +120,7 @@ $bh-theme: mat.define-light-theme(
             primary: $bh-primary,
             accent: $bh-accent,
             warn: $bh-warn,
-        ),
-        typography: $bh-typography,
+        )
     )
 );
 
