@@ -3,8 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { Subject, takeUntil } from 'rxjs';
-import { menu } from 'src/app/config/menu';
-import { MenuItem } from 'src/app/models/menu-item.model';
+import { menu } from 'src/app/core/config/menu';
+import { MenuItem } from 'src/app/core/models/menu-item.model';
 
 @Component({
   selector: 'app-desktop-side-menu',

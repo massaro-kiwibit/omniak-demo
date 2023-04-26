@@ -1,7 +1,7 @@
 @import "variables";
 
 .img-logo {
-  height: $header-height;
+  height: $header-height*0.4;
 }
 .current-theme {
   background-color: var(--primary-500);

@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./prediction-dashboard.component.scss']
 })
 export class PredictionDashboardComponent {
-
+  widgets = [
+    {
+      name: 'Agenda',
+      path: 'agenda'
+    },
+    {
+      name: 'Scadenziario',
+      path: 'timetable'
+    },
+    {
+      name: 'Piano Settimanale',
+      path: 'weekly-plan'
+    },
+  ]
 }
