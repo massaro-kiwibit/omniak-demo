@@ -12,8 +12,9 @@
                     }}</span>
             </div>
         </div>
-        <div matBadge="5">
-            <img class="user-menu" [matMenuTriggerFor]="userMenu" src="assets/icons/icon-512x512.png" width="50">
+        <div class="bottom-navigation">
+            <app-theme-switcher></app-theme-switcher>
+            <div matBadge="5" class="k-logo mat-elevation-z8" [matMenuTriggerFor]="userMenu"></div>
         </div>
         <mat-menu #userMenu="matMenu" xPosition="after">
             <button mat-menu-item>

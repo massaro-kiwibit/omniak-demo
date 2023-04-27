@@ -1,0 +1,19 @@
+<ng-container *ngTemplateOutlet="type==='hover' ? hover : flat"></ng-container>
+<ng-template #hover>
+    <button mat-mini-fab [matMenuTriggerFor]="menu" matTooltip="Change Theme" class="mat-elevation-z0">
+        <mat-icon>palette</mat-icon>
+    </button>
+</ng-template>
+<ng-template #flat>
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Change Theme" class="mat-elevation-z0">
+        <mat-icon>palette</mat-icon>
+    </button>
+</ng-template>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="switchTheme('default')"
+        [class.current-theme]="currentTheme==='default'">Kiwibit</button>
+    <button mat-menu-item (click)="switchTheme('kiwi-dark')" [class.current-theme]="currentTheme==='kiwi-dark'">Kiwibit
+        Dark</button>
+    <button mat-menu-item (click)="switchTheme('bh')" [class.current-theme]="currentTheme==='bh'">Baker
+        Hughes</button>
+</mat-menu>

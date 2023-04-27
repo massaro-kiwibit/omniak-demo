@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatListModule } from '@angular/material/list';
+import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatListModule } from '@angular/material/list';
     MobileSideMenuComponent,
     DesktopSideMenuComponent,
     PageComponent,
-    LayoutComponent
+    LayoutComponent,
+    ThemeSwitcherComponent
   ],
   imports: [
     FormsModule,

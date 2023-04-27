@@ -25,6 +25,7 @@
       </mat-accordion> -->
       <div class="menu-title">
         <img class="img-logo" src="assets/images/product-logo.webp" alt="logo">
+        <app-theme-switcher></app-theme-switcher>
       </div>
       <mat-divider></mat-divider>
       <div class="user-menu">
@@ -62,9 +63,7 @@
       <mat-icon>{{ shortcut.icon }}</mat-icon>
       <!-- <span class="nav-btn-label">{{shortcut.name}}</span> -->
     </div>
-    <div (click)="drawer.toggle()">
-      <img class="user-menu" src="assets/icons/icon-512x512.png" width="24">
-    </div>
+    <div (click)="drawer.toggle()" class="k-menu-toggler"></div>
     <!-- <div class="nav-btn" (click)="drawer.toggle()">
     <mat-icon>menu_open</mat-icon>
     <span class="nav-btn-label">Menu</span>

@@ -13,6 +13,9 @@ $drawer-color-contrast: var(--accent-contrast-500);
 
 .menu-title {
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .mobile-menu {
@@ -161,9 +164,18 @@ $drawer-color-contrast: var(--accent-contrast-500);
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    transition: .1s;
+    transition: 0.1s;
     &:active {
       background-color: var(--accent-700);
     }
   }
+}
+
+.k-menu-toggler {
+  cursor: pointer;
+  border-radius: 50%;
+  background-image: url("/assets/icons/icon-512x512.png");
+  width: 24px;
+  height: 24px;
+  background-size: cover;
 }
