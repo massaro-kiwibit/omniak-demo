@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { bottomNavMenu, menu } from 'src/app/core/config/menu';
 import { MenuItem } from 'src/app/core/models/menu-item.model';
@@ -8,6 +9,16 @@ import { MenuItem } from 'src/app/core/models/menu-item.model';
   styleUrls: ['./mobile-side-menu.component.scss']
 })
 export class MobileSideMenuComponent {
+
+  isMobile$ = this.breakpointObserver
+    .observe([
+      Breakpoints.Small,
+      Breakpoints.XSmall,
+    ]);
+
+  constructor(private breakpointObserver: BreakpointObserver) {
+
+  }
 
   menu: MenuItem[] = menu;
   shortcuts: MenuItem[] = bottomNavMenu;

@@ -30,6 +30,8 @@ $drawer-color: var(--accent-500);
     grid-area: left-nav-rail;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
     border-right: 1px solid $border-base-color;
     z-index: 99;
@@ -99,4 +101,12 @@ span {
     &:hover {
         background-color: $active-color;
     }
+}
+.user-menu {
+    cursor: pointer;
+}
+.navigable {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

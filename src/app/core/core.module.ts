@@ -18,6 +18,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    MatBadgeModule,
+    MatListModule
   ],
   exports: [
     LoginComponent,

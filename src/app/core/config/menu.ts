@@ -159,7 +159,7 @@ export const menu: MenuItem[] = [
             },
         ]
     },
-    {
+    /* {
         name: 'Impostazioni',
         icon: 'tune',
         path: 'settings',
@@ -175,7 +175,7 @@ export const menu: MenuItem[] = [
                 path: 'settings/general'
             }
         ]
-    },
+    }, */
 ]
 
 export const bottomNavMenu: MenuItem[] = [
@@ -193,5 +193,10 @@ export const bottomNavMenu: MenuItem[] = [
         name: 'Analisi',
         icon: 'monitor_heart',
         path: 'analysis',
+    },
+    {
+        name: 'Anagrafiche',
+        icon: 'inbox',
+        path: 'registry',
     }
 ];
