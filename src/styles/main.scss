@@ -4,6 +4,7 @@
 @import "variables";
 // Components
 @import "mat-accordion";
+@import "custom-mat-badge";
 // Themes
 @import "default";
 @import "baker-hughes";
@@ -23,9 +24,4 @@ body {
 
 body {
   margin: 0;
-}
-
-.mat-badge-content {
-  background-color: white !important;
-  border: 1px solid var(--accent-800);
 }

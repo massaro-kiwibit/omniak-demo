@@ -5,7 +5,6 @@ import { PredictionRoutingModule } from './prediction-routing.module';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { TimetableComponent } from './components/timetable/timetable.component';
 import { WeeklyPlanComponent } from './components/weekly-plan/weekly-plan.component';
-import { PredictionDashboardComponent } from './components/prediction-dashboard/prediction-dashboard.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -17,8 +16,7 @@ import { GridColumnsDirective } from 'src/app/shared/directives/grid-columns.dir
   declarations: [
     AgendaComponent,
     TimetableComponent,
-    WeeklyPlanComponent,
-    PredictionDashboardComponent
+    WeeklyPlanComponent
   ],
   imports: [
     CommonModule,

@@ -4,7 +4,7 @@ import { AgendaComponent } from './components/agenda/agenda.component';
 import { TimetableComponent } from './components/timetable/timetable.component';
 import { WeeklyPlanComponent } from './components/weekly-plan/weekly-plan.component';
 import { PageComponent } from 'src/app/core/components/page/page.component';
-import { PredictionDashboardComponent } from './components/prediction-dashboard/prediction-dashboard.component';
+import { OverviewComponent } from 'src/app/shared/components/overview/overview.component';
 
 const routes: Routes = [
   {
@@ -21,11 +21,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: PredictionDashboardComponent
+    component: OverviewComponent
   },
   {
     path: '**',
-    component: PageComponent
+    component: PageComponent,
   }
 ];
 

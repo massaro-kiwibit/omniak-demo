@@ -3,4 +3,5 @@ export interface MenuItem {
     icon?: string;
     path?: string;
     children?: MenuItem[];
+    mobile?: boolean;
 }

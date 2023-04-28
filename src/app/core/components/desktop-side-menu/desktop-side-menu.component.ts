@@ -1,4 +1,3 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -29,12 +28,6 @@ export class DesktopSideMenuComponent {
     .pipe(takeUntil(this.destroyed));
 
   constructor(private breakpointObserver: BreakpointObserver) { }
-
-  openMenuFromToggle() {
-    // TODO
-    this.drawer.toggle();
-    this.drawerMenu = menu;
-  }
 
   onDrawerLeave() {
     this.desktopView$.subscribe({

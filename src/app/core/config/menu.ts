@@ -35,6 +35,7 @@ export const menu: MenuItem[] = [
         name: 'Previsione',
         icon: 'calendar_month',
         path: 'prediction',
+        mobile: true,
         children: [
             {
                 name: 'Agenda',
@@ -57,6 +58,7 @@ export const menu: MenuItem[] = [
         name: 'Attività',
         icon: 'electric_bolt',
         path: 'activity',
+        mobile: true,
         children: [
             {
                 name: 'Inteventi',
@@ -84,6 +86,7 @@ export const menu: MenuItem[] = [
         name: 'Analisi',
         icon: 'monitor_heart',
         path: 'analysis',
+        mobile: true,
         children: [
             {
                 name: 'Operatori',
@@ -116,6 +119,7 @@ export const menu: MenuItem[] = [
         name: 'Anagrafiche',
         icon: 'inbox',
         path: 'registry',
+        mobile: true,
         children: [
             {
                 name: 'Aziende',
