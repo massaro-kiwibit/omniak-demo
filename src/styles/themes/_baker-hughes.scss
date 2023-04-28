@@ -124,6 +124,18 @@ $bh-theme: mat.define-light-theme(
     )
 );
 
+// This nightmare is just to change the Angular Material light background...
+// Get color param from our theme
+$palette-color : map-get($bh-theme, color);
+// Get background param from color param
+$background: map-get($palette-color, background);
+// $background also has background param that contains the color, set it to a custom one
+$background: map_merge($background, (background: map-get($accent-palette, 50)));
+// Set background param for palette
+$palette-color: map_merge($palette-color, (background: $background));
+// Set palette for theme
+$bh-theme: map_merge($bh-theme, (color: $palette-color));
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
