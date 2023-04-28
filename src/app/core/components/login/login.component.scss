@@ -61,5 +61,6 @@ h1 {
 @media screen and (max-width: $large-breakpoint) {
     .main {
         background-size: 0%;
+        animation: none;
     }
 }
