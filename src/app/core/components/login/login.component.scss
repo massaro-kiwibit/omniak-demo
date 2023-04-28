@@ -1,6 +1,7 @@
 @import "variables";
 
 .main {
+    animation: animatedBackground 1s;
     height: 100%;
     overflow-y: auto;
     display: grid;
@@ -11,7 +12,7 @@
     background-repeat: no-repeat;
     background-position: 90%;
     background-size: 42%;
-    transition: .5s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 .box {
     padding: 20px;
@@ -19,6 +20,9 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
+}
+.form-card {
+    width: 100%;
 }
 .header {
     display: flex;
@@ -36,7 +40,6 @@
     font-size: x-small;
 }
 form {
-    width: 300px;
     padding: 30px;
     border-radius: 8px;
     display: grid;
@@ -46,8 +49,18 @@ h1 {
     text-align: center;
 }
 
+@keyframes animatedBackground {
+    from {
+        background-size: 0%;
+    }
+    to {
+        background-size: 42%;
+    }
+}
+
 @media screen and (max-width: $large-breakpoint) {
     .main {
-        background-image: none;
+        background-size: 0%;
+        animation: none;
     }
 }

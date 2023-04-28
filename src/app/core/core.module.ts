@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { GridColumnsDirective } from '../shared/directives/grid-columns.directive';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    RouterModule
+    RouterModule,
+    GridColumnsDirective
   ],
   exports: [
     LoginComponent,
