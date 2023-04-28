@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatListModule } from '@angular/material/list';
 import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
+import { GridColumnsDirective } from '../shared/directives/grid-columns.directive';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switch
     MatCardModule,
     RouterModule,
     MatBadgeModule,
-    MatListModule
+    MatListModule,
+    GridColumnsDirective
   ],
   exports: [
     LoginComponent,
