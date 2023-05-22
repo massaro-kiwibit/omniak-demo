@@ -1,5 +1,5 @@
 <div class="box">
     <button mat-raised-button color="primary" for="files" id="files" (click)="upload.click()">CARICA</button>
     <input #upload type="file" accept="image/*" capture="user" class="hidden" (change)="readURL($event);" />
-    <img [src]="src || 'http://placehold.it/180'" height="auto" alt="your image" class="mat-elevation-z8" />
+    <img [src]="src || 'https://placehold.co/300'" height="auto" alt="your image" class="mat-elevation-z8" />
 </div>
