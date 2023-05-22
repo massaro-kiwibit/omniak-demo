@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}
+img {
+    width: 100%;
+    border-radius: 8px;
+}
