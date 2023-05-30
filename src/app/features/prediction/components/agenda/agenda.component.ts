@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Slide } from 'src/app/core/models/slide.models';
 
 @Component({
   selector: 'app-agenda',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./agenda.component.scss']
 })
 export class AgendaComponent {
+
+  slides: Slide[] = Array.from({ length: 10 }, (value, index) => ({ src: `assets/images/carousel/${index + 1}.jpg` }));
 
   src: string | null | ArrayBuffer = "";
 

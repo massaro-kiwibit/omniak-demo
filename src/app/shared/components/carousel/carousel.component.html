@@ -1,0 +1,23 @@
+<mat-card class="mat-elevation-z8 carousel-preview" [style.background-image]="'url('+slides[currentSlide].src+')'"
+    (click)="openCarousel()">
+</mat-card>
+<ng-template #carousel>
+    <div class="carousel">
+        <!-- Images -->
+        <ng-container *ngFor="let slide of slides;index as i;">
+            <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" @carouselAnimation />
+        </ng-container>
+        <!-- Controls -->
+        <button mat-mini-fab color="primary" class="left" (click)="onPreviousClick()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" class="right" (click)="onNextClick()">
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+        <!-- Slide Indicators -->
+        <div class="indicators">
+            <div class="indicator mat-elevation-z4" [class.active]="currentSlide===i"
+                *ngFor="let indicator of slides; index as i;" (click)="currentSlide=i;"></div>
+        </div>
+    </div>
+</ng-template>
