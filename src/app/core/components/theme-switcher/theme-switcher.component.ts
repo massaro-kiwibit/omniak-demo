@@ -1,6 +1,5 @@
-import { Component, Input, OnDestroy } from '@angular/core';
-import { Theme, ThemeService } from '../../services/theme.service';
-import { Subject } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import { THEME_KEY, Theme, ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-theme-switcher',
@@ -11,7 +10,7 @@ export class ThemeSwitcherComponent {
 
   @Input() type: 'hover' | 'flat' = 'flat';
 
-  currentTheme: Theme = localStorage.getItem('omniak-theme') as Theme;
+  currentTheme: Theme = localStorage.getItem(THEME_KEY) as Theme;
 
   constructor(
     private themeService: ThemeService,

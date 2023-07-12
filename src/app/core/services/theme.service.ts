@@ -2,11 +2,13 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, Inject } from '@angular/core';
 
 export type Theme = 'default' | 'bh' | 'kiwi-dark';
+export const THEME_KEY = "omniak-demo2-theme";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -14,7 +16,7 @@ export class ThemeService {
 
   setTheme(newTheme: Theme) {
     this.document.body.classList.remove('default', 'kiwi-dark', 'bh');
-    localStorage.setItem('omniak-theme', newTheme);
+    localStorage.setItem(THEME_KEY, newTheme);
     this.document.body.classList.add(newTheme);
 
     /* Change PWA status bar color */

@@ -1,7 +1,7 @@
 import { Subject, map, takeUntil } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnDestroy } from '@angular/core';
-import { ThemeService } from '../../services/theme.service';
+import { THEME_KEY, ThemeService } from '../../services/theme.service';
 
 type Theme = 'default' | 'bh' | 'kiwi-dark';
 
@@ -12,7 +12,7 @@ type Theme = 'default' | 'bh' | 'kiwi-dark';
 })
 export class LayoutComponent implements OnDestroy {
 
-  currentTheme: Theme = localStorage.getItem('omniak-theme') as Theme;
+  currentTheme: Theme = localStorage.getItem(THEME_KEY) as Theme;
 
   destroyed = new Subject<void>();
 
