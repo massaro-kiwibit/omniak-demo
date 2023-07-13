@@ -1,28 +1,6 @@
 <div class="mobile-menu">
   <mat-drawer-container class="drawer-container" [hasBackdrop]="true">
     <mat-drawer mode="push" #drawer class="drawer" [autoFocus]="false">
-      <!-- <div class="menu-title">
-        <h3>OmniaK</h3>
-      </div>
-      <mat-accordion #menuAccordion displayMode="flat" class="omniak">
-        <mat-expansion-panel *ngFor="let item of menu" class="mat-elevation-z0" routerLinkActive #rla="routerLinkActive"
-          [expanded]="rla.isActive">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <mat-icon>{{ item.icon }}</mat-icon>
-              {{ item.name }}
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="drawer-menu">
-            <div *ngFor="let item of item.children" class="submenu-item" [routerLink]="item.path"
-              routerLinkActive="active-item-icon" (click)="drawer.close()">
-              <mat-icon *ngIf="item.icon" [fontIcon]="item.icon"></mat-icon>
-              <span>{{ item.name }}</span>
-              <mat-icon *ngIf="item.children">chevron_right</mat-icon>
-            </div>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion> -->
       <div class="menu-title">
         <img class="img-logo" src="assets/images/product-logo.webp" alt="logo">
         <app-theme-switcher></app-theme-switcher>
@@ -31,7 +9,7 @@
       <div class="user-menu">
         <div class="item">
           <mat-icon>account_circle</mat-icon>
-          <span>Signed in as <b>Kiwibit</b></span>
+          <span>Signed in as <b>{{(authService.loggedUser$ | async)?.name}}</b></span>
         </div>
         <div class="item">
           <mat-icon>corporate_fare</mat-icon>
@@ -45,7 +23,7 @@
           <mat-icon>notifications_active</mat-icon>
           <span>Notifiche</span>
         </div>
-        <div class="item" routerLink="login">
+        <div class="item" (click)="authService.logout()">
           <mat-icon>logout</mat-icon>
           <span>Logout</span>
         </div>
@@ -58,15 +36,10 @@
     </mat-drawer-content>
   </mat-drawer-container>
   <div class="bottom-navigation mat-elevation-z8">
-    <div class="nav-btn" *ngFor="let shortcut of shortcuts" [routerLink]="shortcut.path" routerLinkActive="active"
-      (click)="drawer.close()">
-      <mat-icon>{{ shortcut.icon }}</mat-icon>
-      <!-- <span class="nav-btn-label">{{shortcut.name}}</span> -->
+    <div class="nav-btn" *ngFor="let item of authService.menu$ | async" [routerLink]="item.path"
+      routerLinkActive="active" (click)="drawer.close()">
+      <mat-icon>{{ item.icon }}</mat-icon>
     </div>
     <div (click)="drawer.toggle()" class="k-menu-toggler"></div>
-    <!-- <div class="nav-btn" (click)="drawer.toggle()">
-    <mat-icon>menu_open</mat-icon>
-    <span class="nav-btn-label">Menu</span>
-  </div> -->
   </div>
 </div>

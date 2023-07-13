@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { PageComponent } from './core/components/page/page.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { LayoutComponent } from './core/components/layout/layout.component';
+import { isLoggedGuard } from './core/guards/is-logged.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [isLoggedGuard],
     children: [
       {
         path: '',

@@ -162,45 +162,5 @@ export const menu: MenuItem[] = [
                 path: 'settings/users'
             },
         ]
-    },
-    /* {
-        name: 'Impostazioni',
-        icon: 'tune',
-        path: 'settings',
-        children: [
-            {
-                name: 'Dati Aziendali',
-                icon: 'corporate_fare',
-                path: 'settings/company-info'
-            },
-            {
-                name: 'Generali',
-                icon: 'settings',
-                path: 'settings/general'
-            }
-        ]
-    }, */
-]
-
-export const bottomNavMenu: MenuItem[] = [
-    {
-        name: 'Previsione',
-        icon: 'calendar_month',
-        path: 'prediction',
-    },
-    {
-        name: 'Attività',
-        icon: 'electric_bolt',
-        path: 'activity',
-    },
-    {
-        name: 'Analisi',
-        icon: 'monitor_heart',
-        path: 'analysis',
-    },
-    {
-        name: 'Anagrafiche',
-        icon: 'inbox',
-        path: 'registry',
     }
 ];

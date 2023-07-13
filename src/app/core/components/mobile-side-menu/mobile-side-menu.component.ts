@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { menu } from 'src/app/core/config/menu';
-import { MenuItem } from 'src/app/core/models/menu-item.model';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-mobile-side-menu',
@@ -9,6 +8,6 @@ import { MenuItem } from 'src/app/core/models/menu-item.model';
 })
 export class MobileSideMenuComponent {
 
-  shortcuts: MenuItem[] = menu.filter(item => item.mobile);
+  authService = inject(AuthService);
 
 }

@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatListModule } from '@angular/material/list';
 import { ThemeSwitcherComponent } from './components/theme-switcher/theme-switcher.component';
@@ -34,6 +34,7 @@ import { GridColumnsDirective } from '../shared/directives/grid-columns.directiv
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     MatIconModule,
     MatToolbarModule,

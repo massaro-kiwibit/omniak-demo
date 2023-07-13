@@ -7,7 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MenuItem } from 'src/app/core/models/menu-item.model';
-import { menu } from 'src/app/core/config/menu';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-overview',
@@ -26,12 +26,17 @@ import { menu } from 'src/app/core/config/menu';
 })
 export class OverviewComponent implements OnInit {
 
+  router = inject(Router);
+  authService = inject(AuthService);
   @Input() widgets: MenuItem[] = [];
 
-  router = inject(Router);
-
   ngOnInit() {
-    this.widgets = menu.find(item => item.path === this.router.url.replace("/", ""))?.children ?? [];
+    this.authService.menu$
+    .subscribe(
+      menu => {
+        this.widgets = menu.find(item => item.path === this.router.url.replace("/", ""))?.children ?? [];
+      }
+    );
   }
 
 }
