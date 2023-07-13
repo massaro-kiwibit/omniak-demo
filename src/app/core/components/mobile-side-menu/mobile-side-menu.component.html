@@ -39,6 +39,7 @@
     <div class="nav-btn" *ngFor="let item of authService.menu$ | async" [routerLink]="item.path"
       routerLinkActive="active" (click)="drawer.close()">
       <mat-icon>{{ item.icon }}</mat-icon>
+      <span class="nav-btn-label">{{item.name}}</span>
     </div>
     <div (click)="drawer.toggle()" class="k-menu-toggler"></div>
   </div>
