@@ -1,0 +1,18 @@
+<ng-container *ngTemplateOutlet="type==='hover' ? hover : flat"></ng-container>
+<ng-template #hover>
+    <button mat-mini-fab *ngIf="currentTheme==='kiwi-dark'" matTooltip="Light Theme" (click)="switchTheme('default')">
+        <mat-icon>light_mode</mat-icon>
+    </button>
+    <button mat-mini-fab *ngIf="currentTheme==='default'" matTooltip="Dark Theme" (click)="switchTheme('kiwi-dark')">
+        <mat-icon>dark_mode</mat-icon>
+    </button>
+</ng-template>
+<ng-template #flat>
+    <button mat-icon-button *ngIf="currentTheme==='kiwi-dark'" matTooltip="Light Theme"
+        (click)="switchTheme('default')">
+        <mat-icon>light_mode</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="currentTheme==='default'" matTooltip="Dark Theme" (click)="switchTheme('kiwi-dark')">
+        <mat-icon>dark_mode</mat-icon>
+    </button>
+</ng-template>

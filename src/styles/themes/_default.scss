@@ -13,6 +13,7 @@
 $app-typography: mat.define-typography-config(
     $font-family: "Nunito",
 );
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -133,13 +134,26 @@ $app-theme: mat.define-light-theme(
         typography: $app-typography,
     )
 );
+
+// This nightmare is just to change the Angular Material light background...
+// Get color param from our theme
+$palette-color : map-get($app-theme, color);
+// Get background param from color param
+$background: map-get($palette-color, background);
+// $background also has background param that contains the color, set it to a custom one
+$background: map_merge($background, (background: map-get($accent-palette, 50)));
+// Set background param for palette
+$palette-color: map_merge($palette-color, (background: $background));
+// Set palette for theme
+$app-theme: map_merge($app-theme, (color: $palette-color));
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
+@include mat.all-component-themes($app-theme);
 
 :root {
     .default {
-        @include mat.all-component-colors($app-theme);
         @include generate-colors-variables($app-theme);
     }
 }

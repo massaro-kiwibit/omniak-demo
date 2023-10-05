@@ -1,0 +1,28 @@
+<div class="layout">
+  <!-- <div class="header mat-elevation-z2">
+    <img class="img-logo" src="assets/images/product-logo.webp" alt="logo">
+    <div class="actions">
+      <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Change Theme">
+        <mat-icon>palette</mat-icon>
+      </button>
+      <button mat-icon-button routerLink="login" matTooltip="Logout">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="switchTheme('default')"
+        [class.current-theme]="currentTheme==='default'">Kiwibit</button>
+      <button mat-menu-item (click)="switchTheme('kiwi-dark')"
+        [class.current-theme]="currentTheme==='kiwi-dark'">Kiwibit
+        Dark</button>
+      <button mat-menu-item (click)="switchTheme('bh')" [class.current-theme]="currentTheme==='bh'">Baker
+        Hughes</button>
+    </mat-menu>
+  </div> -->
+  <div class="main">
+    <app-desktop-side-menu *ngIf="(isDesktop$ | async); else mobile;"></app-desktop-side-menu>
+    <ng-template #mobile>
+      <app-mobile-side-menu></app-mobile-side-menu>
+    </ng-template>
+  </div>
+</div>

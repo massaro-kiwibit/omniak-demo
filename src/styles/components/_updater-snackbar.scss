@@ -1,0 +1,11 @@
+.updater-snackbar {
+    .mdc-snackbar__label {
+        color: var(--accent-contrast-700) !important;
+    }
+    .mdc-snackbar__surface {
+        background-color: var(--accent-700) !important;
+    }
+    .mat-mdc-snack-bar-action {
+        color: var(--primary-500) !important;
+    }
+}

@@ -1,0 +1,38 @@
+<div class="p-20" grid-columns gt-sm="50fr 50fr" gt-md="repeat(3, 33.33fr)" gap="20px"
+    *ngIf="platform.isDesktop$ | async else mobile">
+    <mat-card *ngFor="let widget of widgets">
+        <mat-card-header>
+            <mat-card-title>
+                <div class="overview-title">
+                    <mat-icon>{{widget.icon}}</mat-icon>
+                    <span>{{widget.name}}</span>
+                </div>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-flat-button color="primary" [routerLink]="widget.path">
+                <mat-icon>launch</mat-icon>
+                <span>Mostra</span>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+<ng-template #mobile>
+    <div *ngFor="let widget of widgets">
+        <div class="item">
+            <div class="item-name">
+                <mat-icon>{{widget.icon}}</mat-icon>
+                <span>
+                    {{widget.name}}
+                </span>
+            </div>
+            <button mat-icon-button [routerLink]="widget.path" matTooltip="Mostra">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</ng-template>
