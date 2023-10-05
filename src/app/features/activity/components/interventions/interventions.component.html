@@ -1,1 +1,12 @@
-<p>interventions works!</p>
+<div [formGroup]="form" class="time-picker-test">
+    <mat-form-field floatLabel="always" class="picker">
+        <mat-label>Time Picker</mat-label>
+        <app-time-picker formControlName="time" #picker="timePicker"></app-time-picker>
+        <mat-hint>Il formato è hh:mm</mat-hint>
+    </mat-form-field>
+    <hr>
+    <pre>
+        {{form.value | json}}
+    </pre>
+    <button mat-raised-button (click)="test()">Log</button>
+</div>

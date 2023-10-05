@@ -1,0 +1,63 @@
+.example-tel-input-container {
+    display: grid;
+    grid-template-columns: 40fr 10fr 40fr 10fr;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+}
+
+.example-tel-input-element {
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+    font: inherit;
+    text-align: center;
+}
+
+.example-tel-input-spacer {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+:host.example-floating .example-tel-input-spacer {
+    opacity: 1;
+}
+
+input[type="number"] {
+    text-align: center;
+    border: none;
+    background: none;
+    outline: none;
+    font: inherit;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    /* border: 1px solid #8e8e8e; */
+    padding: 5px;
+}
+
+.spacer {
+    text-align: center;
+    font-weight: bold;
+}
+
+.example-list {
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.interactive-picker {
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    gap: 5px;
+    position: absolute;
+    left: -16px;
+    top: 10px;
+}
+.mat-icon {
+    margin-left: 8px;
+    cursor: pointer;
+}

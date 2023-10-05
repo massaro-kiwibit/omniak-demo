@@ -1,0 +1,31 @@
+<div role="group" class="example-tel-input-container" [formGroup]="parts"
+    [attr.aria-labelledby]="_formField.getLabelId()" (focusin)="onFocusIn($event)" (focusout)="onFocusOut($event)"
+    cdkOverlayOrigin #origin="cdkOverlayOrigin" #trigger>
+    <input class="hours-input" formControlName="hours" size="2" maxLength="2" max="23" min="0" aria-label="Hours"
+        (input)="_handleInput(parts.controls.hours, minutes)" #hours type="number" placeholder="hh">
+    <span class="spacer">:</span>
+    <input class="minutes-input" formControlName="minutes" size="2" maxLength="2" max="59" min="0" aria-label="Minutes"
+        (input)="_handleInput(parts.controls.minutes, hours)"
+        (keyup.backspace)="autoFocusPrev(parts.controls.minutes, hours)" #minutes type="number" placeholder="mm">
+    <mat-icon matSuffix (click)="togglePanel()" color="primary">schedule</mat-icon>
+</div>
+
+<!-- This template displays the overlay content and is connected to the button -->
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="origin" [cdkConnectedOverlayOpen]="isOpen"
+    [cdkConnectedOverlayMinWidth]="_triggerRect?.width!+16" cdkConnectedOverlayHasBackdrop
+    (backdropClick)="togglePanel()">
+    <div class="interactive-picker" [formGroup]="parts">
+        <mat-form-field>
+            <mat-label>Hours</mat-label>
+            <mat-select formControlName="hours" (selectionChange)="onHoursSelect($event)">
+                <mat-option *ngFor="let n of range(24)" [value]="n">{{n}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Minutes</mat-label>
+            <mat-select formControlName="minutes" (selectionChange)="onMinutesSelect($event)">
+                <mat-option *ngFor="let n of range(60)" [value]="n">{{n}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</ng-template>
