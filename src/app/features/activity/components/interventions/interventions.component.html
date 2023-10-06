@@ -14,9 +14,9 @@
 <hr>
 <div class="mbsc" grid-columns gap="20px">
     <h3>Test 2</h3>
-    <mbsc-datepicker [(ngModel)]="time" themeVariant="light" [controls]="['time']" timeFormat="H'H'mm'm'"
+    <mbsc-datepicker [(ngModel)]="time" themeVariant="light" [controls]="['time']" timeFormat="H'H'm'M'"
         [options]="options" [stepMinute]="15" display="inline" [touchUi]="(isMobile$ | async) ?? false"
-        defaultSelection="0H00m" maxTime="8H00m" returnFormat="locale" />
+        defaultSelection="0H0M" maxTime="8H0M" returnFormat="locale"  [headerText]="prova()"/>
     <p>Time: {{time}}</p>
     <button mat-raised-button color="primary" (click)="test2()">Log</button>
 </div>
