@@ -10,7 +10,7 @@ import { Time } from 'src/app/shared/components/time-picker/time-picker.componen
 export class InterventionsComponent {
 
   form: FormGroup = new FormGroup({
-    time: new FormControl(new Time('', '')),
+    time: new FormControl(new Time(null, null)),
   });
 
   test() {

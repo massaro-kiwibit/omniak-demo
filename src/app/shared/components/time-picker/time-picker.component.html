@@ -2,10 +2,12 @@
     [attr.aria-labelledby]="_formField.getLabelId()" (focusin)="onFocusIn($event)" (focusout)="onFocusOut($event)"
     cdkOverlayOrigin #origin="cdkOverlayOrigin" #trigger>
     <input class="hours-input" formControlName="hours" size="2" maxLength="2" max="23" min="0" aria-label="Hours"
-        (input)="_handleInput(parts.controls.hours, minutes)" #hours type="number" placeholder="hh">
+        (input)="_handleHoursInput(parts.controls.hours, minutes)" #hours type="number" placeholder="hh"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57 && this.value.length < 2">
     <span class="spacer">:</span>
     <input class="minutes-input" formControlName="minutes" size="2" maxLength="2" max="59" min="0" aria-label="Minutes"
-        (input)="_handleInput(parts.controls.minutes, hours)"
+        (input)="_handleMinutesInput(parts.controls.minutes, hours)"
+        onkeypress="return event.charCode >= 48 && event.charCode <= 57 && this.value.length < 2"
         (keyup.backspace)="autoFocusPrev(parts.controls.minutes, hours)" #minutes type="number" placeholder="mm">
     <mat-icon matSuffix (click)="togglePanel()" color="primary">schedule</mat-icon>
 </div>
