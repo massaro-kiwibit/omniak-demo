@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MbscDatepickerOptions } from '@mobiscroll/angular';
+import { PlatformService } from 'src/app/core/services/platform.service';
 import { Time } from 'src/app/shared/components/time-picker/time-picker.component';
 
 @Component({
@@ -9,12 +11,22 @@ import { Time } from 'src/app/shared/components/time-picker/time-picker.componen
 })
 export class InterventionsComponent {
 
-  form: FormGroup = new FormGroup({
-    time: new FormControl(new Time(null, null)),
-  });
+  platform = inject(PlatformService);
+  isMobile$ = this.platform.isMobile$;
 
-  test() {
-    console.log(this.form);
+  time = null;
+
+  timeControl = new FormControl(new Time(null, null))
+
+  test1() {
+    console.log(this.timeControl.value);
+  }
+  test2() {
+    console.log(this.time);
+  }
+
+  options: MbscDatepickerOptions  = {
+    baseTheme: 'material'
   }
 
 }

@@ -11,7 +11,7 @@ import { CoreModule } from './core/core.module';
   declarations: [
     AppComponent,
   ],
-  imports: [
+  imports: [  
     CoreModule,
     BrowserModule,
     AppRoutingModule,

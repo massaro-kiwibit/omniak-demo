@@ -1,13 +1,22 @@
-<div [formGroup]="form" class="time-picker-test">
+<div class="time-picker-test" grid-columns gap="20px" alignItems="center">
+    <h3>Test 1</h3>
     <mat-form-field floatLabel="always" class="picker">
         <mat-label>Time Picker</mat-label>
-        <app-time-picker formControlName="time" #picker="timePicker"></app-time-picker>
+        <app-time-picker [formControl]="timeControl" #picker="timePicker"></app-time-picker>
         <mat-hint>Il formato è hh:mm</mat-hint>
         <mat-error>Invalid Field</mat-error>
     </mat-form-field>
-    <hr>
     <pre>
-        {{form.value | json}}
+        {{timeControl.value | json}}
     </pre>
-    <button mat-raised-button (click)="test()">Log</button>
+    <button mat-raised-button color="primary" (click)="test1()">Log</button>
+</div>
+<hr>
+<div class="mbsc" grid-columns gap="20px">
+    <h3>Test 2</h3>
+    <mbsc-datepicker [(ngModel)]="time" themeVariant="light" [controls]="['time']" timeFormat="H'H'mm'm'"
+        [options]="options" [stepMinute]="15" display="inline" [touchUi]="(isMobile$ | async) ?? false"
+        defaultSelection="0H00m" maxTime="8H00m" returnFormat="locale" />
+    <p>Time: {{time}}</p>
+    <button mat-raised-button color="primary" (click)="test2()">Log</button>
 </div>
