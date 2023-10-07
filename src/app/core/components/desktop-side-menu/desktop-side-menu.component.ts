@@ -24,7 +24,18 @@ export class DesktopSideMenuComponent implements OnDestroy {
 
   constructor(
     private platform: PlatformService
-  ) { }
+  ) {
+    document.addEventListener('mousemove', e => { this.saveCursorPosition(e.clientX, e.clientY); })
+  }
+
+  saveCursorPosition(x: number, y: number) {
+    const xPos = (x / window.innerWidth).toFixed(2);
+    const yPos = (y / window.innerHeight).toFixed(2);
+    console.log(xPos);
+
+    document.documentElement.style.setProperty('--x', xPos);
+    document.documentElement.style.setProperty('--y', yPos);
+  }
 
   onDrawerLeave() {
     this.platform.isDesktop$
