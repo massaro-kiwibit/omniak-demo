@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host=0.0.0.0 -o",
+    "start": "ng serve --host=0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "npm run build && http-server dist/omniak-demo"
+    "deploy": "npm run build && http-server dist"
   },
   "private": true,
   "dependencies": {
