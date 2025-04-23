@@ -109,13 +109,13 @@ $warn-palette: (
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 // In this case we have manually defined the color palettes in the _variables.scss file.
-$kiwi-dark-primary: mat.define-palette($primary-palette);
-$kiwi-dark-accent: mat.define-palette($accent-palette);
+$kiwi-dark-primary: mat.m2-define-palette($primary-palette);
+$kiwi-dark-accent: mat.m2-define-palette($accent-palette);
 // The warn palette is optional (defaults to red).
-$kiwi-dark-warn: mat.define-palette($warn-palette);
+$kiwi-dark-warn: mat.m2-define-palette($warn-palette);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$kiwi-dark-theme: mat.define-dark-theme(
+$kiwi-dark-theme: mat.m2-define-dark-theme(
     (
         color: (
             primary: $kiwi-dark-primary,
