@@ -6,9 +6,10 @@ import { AuthService } from '../../services/auth.service';
 import { PlatformService } from '../../services/platform.service';
 
 @Component({
-  selector: 'app-desktop-side-menu',
-  templateUrl: './desktop-side-menu.component.html',
-  styleUrls: ['./desktop-side-menu.component.scss'],
+    selector: 'app-desktop-side-menu',
+    templateUrl: './desktop-side-menu.component.html',
+    styleUrls: ['./desktop-side-menu.component.scss'],
+    standalone: false
 })
 export class DesktopSideMenuComponent implements OnDestroy {
 

@@ -13,20 +13,19 @@ import { PlatformService } from 'src/app/core/services/platform.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
-  selector: 'app-overview',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    GridColumnsDirective,
-    RouterModule,
-    MatDividerModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTooltipModule
-  ],
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+    selector: 'app-overview',
+    imports: [
+        CommonModule,
+        MatCardModule,
+        GridColumnsDirective,
+        RouterModule,
+        MatDividerModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTooltipModule
+    ],
+    templateUrl: './overview.component.html',
+    styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent {
 

@@ -5,9 +5,10 @@ import { PlatformService } from 'src/app/core/services/platform.service';
 import { Time } from 'src/app/shared/components/time-picker/time-picker.component';
 
 @Component({
-  selector: 'app-interventions',
-  templateUrl: './interventions.component.html',
-  styleUrls: ['./interventions.component.scss']
+    selector: 'app-interventions',
+    templateUrl: './interventions.component.html',
+    styleUrls: ['./interventions.component.scss'],
+    standalone: false
 })
 export class InterventionsComponent {
 

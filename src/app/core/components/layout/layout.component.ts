@@ -6,9 +6,10 @@ import { THEME_KEY, ThemeService } from '../../services/theme.service';
 type Theme = 'default' | 'bh' | 'kiwi-dark';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+    selector: 'app-layout',
+    templateUrl: './layout.component.html',
+    styleUrls: ['./layout.component.scss'],
+    standalone: false
 })
 export class LayoutComponent implements OnDestroy {
 

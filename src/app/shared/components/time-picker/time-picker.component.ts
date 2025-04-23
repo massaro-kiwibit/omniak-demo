@@ -16,27 +16,26 @@ export class Time {
 }
 
 @Component({
-  selector: 'app-time-picker',
-  exportAs: 'timePicker',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    OverlayModule,
-    MatButtonModule,
-    MatSelectModule,
-    NgFor
-  ],
-  templateUrl: './time-picker.component.html',
-  styleUrls: ['./time-picker.component.scss'],
-  providers: [{ provide: MatFormFieldControl, useExisting: TimePickerComponent }],
-  host: {
-    '[class.example-floating]': 'shouldLabelFloat',
-    '[id]': 'id',
-  },
+    selector: 'app-time-picker',
+    exportAs: 'timePicker',
+    imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        OverlayModule,
+        MatButtonModule,
+        MatSelectModule,
+        NgFor
+    ],
+    templateUrl: './time-picker.component.html',
+    styleUrls: ['./time-picker.component.scss'],
+    providers: [{ provide: MatFormFieldControl, useExisting: TimePickerComponent }],
+    host: {
+        '[class.example-floating]': 'shouldLabelFloat',
+        '[id]': 'id',
+    }
 })
 export class TimePickerComponent implements OnInit, DoCheck, ControlValueAccessor, MatFormFieldControl<Time>, OnDestroy {
 
