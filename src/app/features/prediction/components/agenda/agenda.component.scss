@@ -1,0 +1,52 @@
+$controls-height: 30px;
+$header-height: 30px;
+.agenda {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto minmax(auto, 100%);
+    .controls {
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: $controls-height;
+    }
+    .header {
+        display: grid;
+        gap: 1px;
+        grid-template-columns: repeat(7, auto);
+        grid-template-rows: $header-height;
+        justify-items: flex-start;
+        align-items: center;
+        font-weight: bold;
+    }
+    .days {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, auto);
+        grid-template-rows: repeat(auto, auto);
+        gap: 1px;
+        .cell {
+            min-height: 100px;
+            position: relative;
+            background-color: #fff;
+            &:hover {
+                background-color: var(--accent-50);
+            }
+            .day-num {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                font-weight: bold;
+                color: var(--primary-500);
+            }
+            .out-of-month {
+                color: var(--accent-100);
+            }
+            .content {
+                margin-top: 40px;
+            }
+        }
+    }
+}

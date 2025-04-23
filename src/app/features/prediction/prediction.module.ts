@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { GridColumnsDirective } from 'src/app/shared/directives/grid-columns.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GridColumnsDirective } from 'src/app/shared/directives/grid-columns.dir
     MatDividerModule,
     MatButtonModule,
     GridColumnsDirective,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ]
 })
 export class PredictionModule { }

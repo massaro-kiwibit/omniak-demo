@@ -1,1 +1,47 @@
-<p>agenda works!</p>
+<div class="agenda">
+    <div class="controls">
+        <select [ngModel]="currentYear" (ngModelChange)="onYearChange($event)">
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        </select>
+        <select [ngModel]="currentMonth" (ngModelChange)="onMonthChange($event)">
+            <option value="0">Gennaio</option>
+            <option value="1">Febbraio</option>
+            <option value="2">Marzo</option>
+            <option value="3">Aprile</option>
+            <option value="4">Maggio</option>
+            <option value="5">Giugno</option>
+            <option value="6">Luglio</option>
+            <option value="7">Agosto</option>
+            <option value="8">Settembre</option>
+            <option value="9">Ottobre</option>
+            <option value="10">Novembre</option>
+            <option value="11">Dicembre</option>
+        </select>
+    </div>
+    <div class="header">
+        <span>Lun</span>
+        <span>Mar</span>
+        <span>Mer</span>
+        <span>Gio</span>
+        <span>Ven</span>
+        <span>Sab</span>
+        <span>Dom</span>
+    </div>
+    <div class="days">
+        @for (week of weeks; track $index) {
+        @for (day of week; track $index) {
+        <div class="cell">
+            @let dateInfo = getDateInfo(day);
+            <div class="day-num" [ngClass]="{
+                'out-of-month': dateInfo.isOutOfMonth
+            }">{{dateInfo.date}}</div>
+            <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nobis fugiat maxime assumenda, vel cumque in amet. Assumenda, tempora vitae?
+            </div>
+        </div>
+        }
+        }
+    </div>
+</div>
