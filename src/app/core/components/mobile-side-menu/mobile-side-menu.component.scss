@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as *;
 
 $header-height: $header-height;
 $bottom-nav-height: $bottom-nav-height;
